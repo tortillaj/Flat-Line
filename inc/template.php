@@ -5,6 +5,8 @@ class Template
 
   /*
    * Get the excerpt of shorten the content
+   *
+   * @param $post object
    */
   public static function excerpt( $post = null )
   {
@@ -12,9 +14,9 @@ class Template
       global $post;
     }
 
-    $content = (!empty($post->post_excerpt)) ? self::shorten( $post->post_excerpt) : self::shorten( $post->post_content);
+    $content = (!empty($post->post_excerpt)) ? self::shorten( $post->post_excerpt ) : self::shorten( $post->post_content );
 
-    return $content . '<a href="' . get_permalink() . '">Read More &raquo;</a>';
+    return $content . ' <a href="' . get_permalink() . '">Read More &raquo;</a>';
   }
 
   /*

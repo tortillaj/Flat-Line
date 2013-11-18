@@ -8,7 +8,7 @@ if ( post_password_required() )
   return;
 ?>
 
-<article class="article-comments">
+<article class="article-comments" aria-live="polite" aria-relevant="all">
 
   <?php if ( have_comments() ) : ?>
     <h2 class="comments-title">

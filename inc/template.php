@@ -4,6 +4,27 @@ class Template
 {
 
   /*
+   * Get the title
+   *
+   * @param $post object
+   */
+  public static function title( $post = null )
+  {
+    if ( $post === null ) {
+      global $post;
+    }
+
+    $title = $post->post_title;
+
+    if ( is_search() ) {
+      $title = self::embolden_replace( $title );
+    }
+
+    return $title;
+
+  }
+
+  /*
    * Get the excerpt of shorten the content
    *
    * @param $post object
@@ -90,7 +111,7 @@ class Template
     global $wp_query;
 
     if ( $wp_query->max_num_pages > 1 ): ?>
-      <nav id="pagination">
+      <nav role="navigation">
         <?php next_posts_link( '<span class="meta-nav">&larr;</span> Older posts' ); ?>
         <?php previous_posts_link( 'Newer posts <span class="meta-nav">&rarr;</span>' ); ?>
       </nav>
@@ -118,8 +139,6 @@ class Template
         the_author_posts_link();
       }
     }
-    >>>>>>>
-    29cfb008c1acb295924c2a81a6585aa560db7736
   }
 
 }

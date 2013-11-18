@@ -20,25 +20,27 @@ add_theme_support( 'jquery-cdn' );
 /**
  * .main classes
  */
-function dawn_main_class() {
-	if ( dawn_display_sidebar() ) {
-		$class = 'ninecol first';
-	} else {
-		$class = 'twelvecol first';
-	}
+function dawn_main_class()
+{
+  if ( dawn_display_sidebar() ) {
+    $class = 'ninecol first';
+  } else {
+    $class = 'twelvecol first';
+  }
 
-	if ( is_search() || is_archive() ) {
-		$class .= ' list-view';
-	}
+  if ( is_search() || is_archive() ) {
+    $class .= ' list-view';
+  }
 
-	return $class;
+  return $class;
 }
 
 /**
  * .sidebar classes
  */
-function dawn_sidebar_class() {
-	return 'threecol';
+function dawn_sidebar_class()
+{
+  return 'threecol';
 }
 
 
@@ -47,25 +49,20 @@ function dawn_sidebar_class() {
  *
  * See inc/sidebar.php for more details
  */
-function dawn_display_sidebar() {
-	$sidebar_config = new Dawn_Sidebar(
+function dawn_display_sidebar()
+{
+  $sidebar_config = new Dawn_Sidebar(
 
-		// WP conditionals with no sidebars
-		array(
+  // WP conditionals with no sidebars
+    array(),
 
-		),
+    // singular page templates with no sidebars
+    array(),
 
-		// singular page templates with no sidebars
-		array(
+    // singular post types with no sidebars
+    array()
 
-		),
+  );
 
-		// singular post types with no sidebars
-		array(
-
-		)
-
-	);
-
-	return apply_filters( 'dawn_display_sidebar', $sidebar_config->display );
+  return apply_filters( 'dawn_display_sidebar', $sidebar_config->display );
 }

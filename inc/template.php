@@ -14,13 +14,14 @@ class Template
       global $post;
     }
 
-    $content = (!empty($post->post_excerpt)) ? self::shorten( $post->post_excerpt ) : self::shorten( $post->post_content );
+    $content = ( !empty( $post->post_excerpt ) ) ? self::shorten( $post->post_excerpt ) : self::shorten( $post->post_content );
 
     if ( is_search() ) {
       $content = self::embolden_replace( $content );
     }
 
-    return $content . ' <a href="' . get_permalink() . '">Read More &raquo;</a>';
+    return $content . '<a href="' . get_permalink() . '">Read More &rarr;</a>';
+
   }
 
   /*
@@ -79,6 +80,46 @@ class Template
     }
     $subject = preg_replace( $patterns, $replacements, strip_tags( $subject ) );
     return $subject;
+  }
+
+  /*
+   * Pagination (older posts / newer posts links)
+   */
+  public static function paginate()
+  {
+    global $wp_query;
+
+    if ( $wp_query->max_num_pages > 1 ): ?>
+      <nav id="pagination">
+        <?php next_posts_link( '<span class="meta-nav">&larr;</span> Older posts' ); ?>
+        <?php previous_posts_link( 'Newer posts <span class="meta-nav">&rarr;</span>' ); ?>
+      </nav>
+    <?php endif;
+  }
+
+  /*
+   *  Use the Co-Authors plugin if installed
+   */
+  public static function co_authors( $links = true )
+  {
+    if ( function_exists( 'coauthors' ) && function_exists( 'coauthors_posts_links' ) ) {
+      if ( !$links ) {
+        coauthors();
+      }
+      else {
+        coauthors_posts_links();
+      }
+    }
+    else {
+      if ( !$links ) {
+        get_the_author();
+      }
+      else {
+        the_author_posts_link();
+      }
+    }
+    >>>>>>>
+    29cfb008c1acb295924c2a81a6585aa560db7736
   }
 
 }

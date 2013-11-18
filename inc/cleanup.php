@@ -8,7 +8,8 @@
  * Remove inline CSS used by posts with galleries
  * Remove self-closing tag and change ''s to "'s on rel_canonical()
  */
-function dawn_head_cleanup() {
+function dawn_head_cleanup()
+{
 
   // Originally from http://wpengineer.com/1438/wordpress-header/
   remove_action( 'wp_head', 'feed_links', 2 );
@@ -20,31 +21,32 @@ function dawn_head_cleanup() {
   remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
 
   global $wp_widget_factory;
-  remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );
+  remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'],
+                                   'recent_comments_style' ) );
 
-  if ( !class_exists( 'WPSEO_Frontend' ) ) {
+  if ( ! class_exists( 'WPSEO_Frontend' ) ) {
     remove_action( 'wp_head', 'rel_canonical' );
     add_action( 'wp_head', 'dawn_rel_canonical' );
   }
 
-  // Register sidebars
-  add_action( 'widgets_init', 'dawn_register_sidebars' );
 }
 
-function dawn_rel_canonical() {
+function dawn_rel_canonical()
+{
   global $wp_the_query;
 
-  if ( !is_singular() ) {
+  if ( ! is_singular() ) {
     return;
   }
 
-  if ( !$id = $wp_the_query->get_queried_object_id() ) {
+  if ( ! $id = $wp_the_query->get_queried_object_id() ) {
     return;
   }
 
   $link = get_permalink( $id );
   echo "\t<link rel=\"canonical\" href=\"$link\">\n";
 }
+
 add_action( 'init', 'dawn_head_cleanup' );
 
 /**
@@ -58,9 +60,10 @@ add_filter( 'the_generator', '__return_false' );
  * Change lang="en-US" to lang="en"
  * Remove dir="ltr"
  */
-function dawn_language_attributes() {
+function dawn_language_attributes()
+{
   $attributes = array();
-  $output = '';
+  $output     = '';
 
   if ( function_exists( 'is_rtl' ) ) {
     if ( is_rtl() == 'rtl' ) {
@@ -81,18 +84,21 @@ function dawn_language_attributes() {
 
   return $output;
 }
+
 add_filter( 'language_attributes', 'dawn_language_attributes' );
 
 
 /**
  * Clean up output of stylesheet <link> tags
  */
-function dawn_clean_style_tag( $input ) {
+function dawn_clean_style_tag( $input )
+{
   preg_match_all( "!<link rel='stylesheet'\s?(id='[^']+')?\s+href='(.*)' type='text/css' media='(.*)' />!", $input, $matches );
   // Only display media if it is meaningful
   $media = $matches[3][0] !== '' && $matches[3][0] !== 'all' ? ' media="' . $matches[3][0] . '"' : '';
   return '<link rel="stylesheet" href="' . $matches[2][0] . '"' . $media . '>' . "\n";
 }
+
 add_filter( 'style_loader_tag', 'dawn_clean_style_tag' );
 
 
@@ -102,9 +108,11 @@ add_filter( 'style_loader_tag', 'dawn_clean_style_tag' );
  * @link https://gist.github.com/965956
  * @link http://www.readability.com/publishers/guidelines#publisher
  */
-function dawn_embed_wrap( $cache, $url, $attr = '', $post_ID = '' ) {
+function dawn_embed_wrap( $cache, $url, $attr = '', $post_ID = '' )
+{
   return '<div class="entry-content-asset">' . $cache . '</div>';
 }
+
 add_filter( 'embed_oembed_html', 'dawn_embed_wrap', 10, 4 );
 
 /**
@@ -113,7 +121,8 @@ add_filter( 'embed_oembed_html', 'dawn_embed_wrap', 10, 4 );
  *
  * @link http://justintadlock.com/archives/2011/07/01/captions-in-wordpress
  */
-function dawn_caption( $output, $attr, $content ) {
+function dawn_caption( $output, $attr, $content )
+{
   if ( is_feed() ) {
     return $output;
   }
@@ -128,22 +137,23 @@ function dawn_caption( $output, $attr, $content ) {
   $attr = shortcode_atts( $defaults, $attr );
 
   // If the width is less than 1 or there is no caption, return the content wrapped between the [caption] tags
-  if ( $attr['width'] < 1 || empty( $attr['caption'] ) ) {
+  if ( $attr['width'] < 1 || empty($attr['caption']) ) {
     return $content;
   }
 
   // Set up the attributes for the caption <figure>
-  $attributes  = ( !empty( $attr['id'] ) ? ' id="' . esc_attr( $attr['id'] ) . '"' : '' );
+  $attributes = (! empty($attr['id']) ? ' id="' . esc_attr( $attr['id'] ) . '"' : '');
   $attributes .= ' class="thumbnail wp-caption ' . esc_attr( $attr['align'] ) . '"';
   $attributes .= ' style="width: ' . esc_attr( $attr['width'] ) . 'px"';
 
-  $output  = '<figure' . $attributes .'>';
+  $output = '<figure' . $attributes . '>';
   $output .= do_shortcode( $content );
   $output .= '<figcaption class="caption wp-caption-text">' . $attr['caption'] . '</figcaption>';
   $output .= '</figure>';
 
   return $output;
 }
+
 add_filter( 'img_caption_shortcode', 'dawn_caption', 10, 3 );
 
 /**
@@ -151,44 +161,53 @@ add_filter( 'img_caption_shortcode', 'dawn_caption', 10, 3 );
  *
  * @link http://www.deluxeblogtips.com/2011/01/remove-dashboard-widgets-in-wordpress.html
  */
-function dawn_remove_dashboard_widgets() {
+function dawn_remove_dashboard_widgets()
+{
   remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
   remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );
   remove_meta_box( 'dashboard_primary', 'dashboard', 'normal' );
   remove_meta_box( 'dashboard_secondary', 'dashboard', 'normal' );
 }
+
 add_action( 'admin_init', 'dawn_remove_dashboard_widgets' );
 
 /**
  * Clean up the_excerpt()
  */
-function dawn_excerpt_length( $length ) {
+function dawn_excerpt_length( $length )
+{
   return POST_EXCERPT_LENGTH;
 }
 
-function dawn_excerpt_more( $more ) {
+function dawn_excerpt_more( $more )
+{
   return ' &hellip; <a href="' . get_permalink() . '">' . __( 'Continued', 'dawn' ) . '</a>';
 }
+
 add_filter( 'excerpt_length', 'dawn_excerpt_length' );
 add_filter( 'excerpt_more', 'dawn_excerpt_more' );
 
 /**
  * Remove unnecessary self-closing tags
  */
-function dawn_remove_self_closing_tags( $input ) {
+function dawn_remove_self_closing_tags( $input )
+{
   return str_replace( ' />', '>', $input );
 }
-add_filter( 'get_avatar',          'dawn_remove_self_closing_tags' ); // <img />
-add_filter( 'comment_id_fields',   'dawn_remove_self_closing_tags' ); // <input />
+
+add_filter( 'get_avatar', 'dawn_remove_self_closing_tags' ); // <img />
+add_filter( 'comment_id_fields', 'dawn_remove_self_closing_tags' ); // <input />
 add_filter( 'post_thumbnail_html', 'dawn_remove_self_closing_tags' ); // <img />
 
 /**
  * Don't return the default description in the RSS feed if it hasn't been changed
  */
-function dawn_remove_default_description( $bloginfo ) {
+function dawn_remove_default_description( $bloginfo )
+{
   $default_tagline = 'Just another WordPress site';
-  return ( $bloginfo === $default_tagline ) ? '' : $bloginfo;
+  return ($bloginfo === $default_tagline) ? '' : $bloginfo;
 }
+
 add_filter( 'get_bloginfo_rss', 'dawn_remove_default_description' );
 
 /**
@@ -196,18 +215,20 @@ add_filter( 'get_bloginfo_rss', 'dawn_remove_default_description' );
  *
  * @link http://txfx.net/wordpress-plugins/nice-search/
  */
-function dawn_nice_search_redirect() {
+function dawn_nice_search_redirect()
+{
   global $wp_rewrite;
-  if ( !isset( $wp_rewrite ) || !is_object( $wp_rewrite ) || !$wp_rewrite->using_permalinks() ) {
+  if ( ! isset($wp_rewrite) || ! is_object( $wp_rewrite ) || ! $wp_rewrite->using_permalinks() ) {
     return;
   }
 
   $search_base = $wp_rewrite->search_base;
-  if ( is_search() && !is_admin() && strpos( $_SERVER['REQUEST_URI'], "/{$search_base}/" ) === false ) {
+  if ( is_search() && ! is_admin() && strpos( $_SERVER['REQUEST_URI'], "/{$search_base}/" ) === false ) {
     wp_redirect( home_url( "/{$search_base}/" . urlencode( get_query_var( 's' ) ) ) );
     exit();
   }
 }
+
 if ( current_theme_supports( 'nice-search' ) ) {
   add_action( 'template_redirect', 'dawn_nice_search_redirect' );
 }
@@ -218,21 +239,25 @@ if ( current_theme_supports( 'nice-search' ) ) {
  * @link http://wordpress.org/support/topic/blank-search-sends-you-to-the-homepage#post-1772565
  * @link http://core.trac.wordpress.org/ticket/11330
  */
-function dawn_request_filter( $query_vars ) {
-  if ( isset( $_GET['s'] ) && empty( $_GET['s'] ) ) {
+function dawn_request_filter( $query_vars )
+{
+  if ( isset($_GET['s']) && empty($_GET['s']) ) {
     $query_vars['s'] = ' ';
   }
 
   return $query_vars;
 }
+
 add_filter( 'request', 'dawn_request_filter' );
 
 /**
  * Tell WordPress to use searchform.php from the templates/ directory. Requires WordPress 3.6+
  */
-function dawn_get_search_form( $form ) {
+function dawn_get_search_form( $form )
+{
   $form = '';
   locate_template( '/templates/searchform.php', true, false );
   return $form;
 }
+
 add_filter( 'get_search_form', 'dawn_get_search_form' );

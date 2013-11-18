@@ -3,6 +3,7 @@
 /* include necessary site functions */
 require_once locate_template( '/inc/helpers.php' );
 require_once locate_template( '/inc/init.php' );
+require_once locate_template( '/inc/cleanup.php' );
 require_once locate_template( '/inc/wrapper.php' );
 require_once locate_template( '/inc/sidebar.php' );
 

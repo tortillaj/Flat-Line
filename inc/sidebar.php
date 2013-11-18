@@ -10,7 +10,8 @@
  * @return boolean True will display the sidebar, False will not
  *
  */
-class Dawn_Sidebar {
+class Dawn_Sidebar
+{
 
   private $conditionals;
 
@@ -20,7 +21,8 @@ class Dawn_Sidebar {
 
   public $display = true;
 
-  function __construct( $conditionals = array(), $templates = array(), $singulars = array() ) {
+  function __construct( $conditionals = array(), $templates = array(), $singulars = array() )
+  {
     $this->conditionals = $conditionals;
     $this->templates    = $templates;
     $this->singulars    = $singulars;
@@ -34,7 +36,8 @@ class Dawn_Sidebar {
     }
   }
 
-  private function check_conditional_tag( $conditional_tag ) {
+  private function check_conditional_tag( $conditional_tag )
+  {
     if ( is_array( $conditional_tag ) ) {
       return $conditional_tag[0]( $conditional_tag[1] );
     } else {
@@ -42,11 +45,13 @@ class Dawn_Sidebar {
     }
   }
 
-  private function check_page_template( $page_template ) {
+  private function check_page_template( $page_template )
+  {
     return is_page_template( $page_template );
   }
 
-  private function check_singulars( $single_post ) {
+  private function check_singulars( $single_post )
+  {
     return is_singular( $single_post );
   }
 }

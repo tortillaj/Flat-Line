@@ -1,0 +1,46 @@
+table {
+  display: table;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid $medium-gray;
+
+  caption {
+    text-align: center;
+    font-size: $large;
+    padding: .75em;
+  }
+
+  thead th,
+  tbody td,
+  tr td {
+    display: table-cell;
+    padding: $margin;
+    vertical-align: top;
+    text-align: left;
+    border: 1px solid $medium-gray;
+  }
+
+  tr td, tbody tr td {
+    font-size: $normal;
+  }
+
+  thead {
+    background-color: $light-gray;
+    color: $off-black;
+
+    tr th {
+      font-size: $large;
+      font-weight: bold;
+      vertical-align: bottom;
+    }
+  }
+
+  tr:nth-of-type(even),
+  table tr.stripe,
+  table tr.striped {
+    background-color: $pale-gray;
+  }
+
+}

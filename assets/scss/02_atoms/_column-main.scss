@@ -1,0 +1,19 @@
+%column-main {
+  @include grid-span(6, 1);
+
+  @include breakpoint($sapling) {
+    @include grid-span(6, 4);
+  }
+
+  @include breakpoint($bush) {
+    @include grid-span(9, 4);
+  }
+
+  @include breakpoint($tree) {
+    @include grid-span(9, 4);
+  }
+
+  @include breakpoint($sequoia) {
+    @include grid-span(9, 3);
+  }
+}

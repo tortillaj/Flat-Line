@@ -1,0 +1,20 @@
+.header-document {
+
+  @include grid-span(6, 1);
+
+  @include breakpoint($sapling) {
+    @include grid-span(3, 1);
+  }
+
+  @include breakpoint($bush) {
+    @include grid-span(3, 1);
+  }
+
+  @include breakpoint($tree) {
+    @include grid-span(3, 1);
+  }
+
+  @include breakpoint($sequoia) {
+    @include grid-span(2, 1);
+  }
+}

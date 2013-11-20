@@ -1,0 +1,5 @@
+html {
+  * {
+    @include box-sizing('border-box');
+  }
+}

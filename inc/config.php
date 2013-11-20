@@ -23,9 +23,9 @@ add_theme_support( 'jquery-cdn' );
 function dawn_main_class()
 {
   if ( dawn_display_sidebar() ) {
-    $class = 'ninecol first';
+    $class = '';
   } else {
-    $class = 'twelvecol first';
+    $class = '';
   }
 
   if ( is_search() || is_archive() ) {
@@ -40,7 +40,7 @@ function dawn_main_class()
  */
 function dawn_sidebar_class()
 {
-  return 'threecol';
+  return '';
 }
 
 

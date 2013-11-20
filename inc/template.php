@@ -92,12 +92,12 @@ class Template
     $patterns     = array();
     $replacements = array();
     foreach ( $search_terms as $key => $value ) {
-      $patterns[ ]     = '/' . strtolower( $value ) . '/';
-      $patterns[ ]     = '/' . strtoupper( $value ) . '/';
-      $patterns[ ]     = '/' . ucwords( $value ) . '/';
-      $replacements[ ] = '<strong class="search-result">' . strtolower( $value ) . '</strong>';
-      $replacements[ ] = '<strong class="search-result">' . strtoupper( $value ) . '</strong>';
-      $replacements[ ] = '<strong class="search-result">' . ucwords( $value ) . '</strong>';
+      $patterns[]     = '/' . strtolower( $value ) . '/';
+      $patterns[]     = '/' . strtoupper( $value ) . '/';
+      $patterns[]     = '/' . ucwords( $value ) . '/';
+      $replacements[] = '<strong class="search-result">' . strtolower( $value ) . '</strong>';
+      $replacements[] = '<strong class="search-result">' . strtoupper( $value ) . '</strong>';
+      $replacements[] = '<strong class="search-result">' . ucwords( $value ) . '</strong>';
     }
     $subject = preg_replace( $patterns, $replacements, strip_tags( $subject ) );
     return $subject;
@@ -120,6 +120,8 @@ class Template
 
   /*
    *  Use the Co-Authors plugin if installed
+   *
+   * @param $links boolean indicate if the author names should be links to their pages
    */
   public static function co_authors( $links = true )
   {
@@ -139,6 +141,32 @@ class Template
         the_author_posts_link();
       }
     }
+  }
+
+  /*
+   * List of current posts / post types
+   *
+   * @param $types array of post types
+   */
+  public static function recent_posts( $types = array( 'post' ) )
+  {
+    $return = '';
+
+    $args = array( 'post_type'      => $types,
+                   'orderby'        => 'date',
+                   'post_status'    => 'publish',
+                   'posts_per_page' => -1 );
+
+    $posts = new WP_Query( $args );
+
+    if ( $posts->have_posts() ) {
+      while ( $posts->have_posts() ) {
+        $posts->the_post();
+        $return .= '<a href="' . get_permalink() . '" rel="bookmark" title="' . the_title_attribute( 'echo=0' ) . '">' . get_the_title() . '<time>' . get_the_date( 'F j, Y' ) . '</time></a>';
+      }
+    }
+
+    return $return;
   }
 
 }

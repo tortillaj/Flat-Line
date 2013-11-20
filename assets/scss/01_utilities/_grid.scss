@@ -1,12 +1,19 @@
-$grids: 4;
-$grids: add-grid(2 at $seed);
-$grids: add-grid(4 at $sprout);
-$grids: add-grid(6 at $sapling);
-$grids: add-grid(9 at $bush);
-$grids: add-grid(12 at $tree);
+$grids: 6;
+$grids: add-grid(6 at $seed);
+$grids: add-grid(9 at $sapling);
+$grids: add-grid(12 at $bush);
+$grids: add-grid(15 at $tree);
+$grids: add-grid(18 at $sequoia);
+
+$gutters: 1/5;
+$gutter-styles: 'split';
+
+$include-clearfix: true;
 
 .container {
   @include background-grid;
+  @extend %cf;
   min-height: 100%;
-
+  margin: 0 auto;
+  padding: $margin 0 0;
 }

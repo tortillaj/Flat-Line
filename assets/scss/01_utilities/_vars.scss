@@ -10,3 +10,19 @@ $sequoia: 1500px / 16px * 1em;
 /* Layout */
 $page-width: 96%;
 $margin: 10px;
+
+/* Typography */
+$ratio: fifth();
+$base-size: 14px;
+$class-slug: ms;
+
+$normal: ms(0);
+$small: ms(0) * 0.85;
+$large: ms(0) * 1.15;
+
+/* Colors */
+$off-black: #4d4d4d;
+$dark-gray: lighten($off-black, 15%);
+$medium-gray: lighten($dark-gray, 15%);
+$light-gray: lighten($dark-gray, 25%);
+$pale-gray: #eaeaea;

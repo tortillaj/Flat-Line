@@ -17,7 +17,7 @@ function dawn_setup()
   define('THEME_PATH', RELATIVE_CONTENT_PATH . '/themes/' . THEME_NAME);
   define('GOOGLE_ANALYTICS_ID', '');
   define('POST_EXCERPT_LENGTH', 200);
-  define('ASSETS_VERSION', '1.0.7');
+  define('ASSETS_VERSION', '1.0.8');
 
   // enable livereload on the following domain
   define('DEV_DOMAIN_CONTAINS', 'dev');

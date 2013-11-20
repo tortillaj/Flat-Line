@@ -28,8 +28,16 @@ $large: ms(0) * 1.15;
 $larger: ms(0) * 1.25;
 
 /* Colors */
+$black: #000000;
 $off-black: #4d4d4d;
-$dark-gray: lighten($off-black, 15%);
-$medium-gray: lighten($dark-gray, 15%);
-$light-gray: lighten($dark-gray, 25%);
+$medium-gray: #788474;
+$dark-gray: darken($medium-gray, 5%);
+$light-gray: lighten($medium-gray, 5%);
 $pale-gray: #eaeaea;
+$medium-green: #788474;
+$light-green: #f4fee9;
+$dark-gray-blue: #31303f;
+$medium-gray-blue: #61676f;
+$light-gray-blue: #a8a596;
+$red: #ab5c37;
+$yellow: #cfa55f;

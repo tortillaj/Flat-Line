@@ -4,30 +4,34 @@ h1 {
   margin: (3.8 * $margin) 0;
 }
 
-h2 {
+h2, %h2 {
   font-size: ms(4);
   line-height: ms(4) * 1.4;
   margin: (2.5 * $margin) 0;
 }
 
-h3 {
+h3, %h3 {
   font-size: ms(2);
   line-height: ms(2) * 1.5;
   margin: (1.5 * $margin) 0;
 }
 
-h4, h5, h6 {
+h4, %h4 {
   font-size: ms(1);
   line-height: ms(1) * 1.6;
   margin: $margin 0;
 }
 
-h5, h6 {
-  font-size: $larger;
+h5, %h5, h6, %h6 {
+  font-size: ms(0);
+  line-height: ms(0) * 1.8;
   text-transform: uppercase;
+  margin: 1.2 * $margin 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
   font-family: $vollkorn;
   font-weight: 400;
   a {

@@ -17,6 +17,8 @@
 
   <div class="main <?php echo dawn_main_class(); ?>" role="main">
 
+    <a class="logo" href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo( 'name' ); ?></a>
+
     <?php if ( have_posts() ) : ?>
 
       <?php while ( have_posts() ) : the_post(); ?>

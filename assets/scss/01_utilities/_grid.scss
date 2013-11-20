@@ -6,14 +6,12 @@ $grids: add-grid(15 at $tree);
 $grids: add-grid(18 at $sequoia);
 
 $gutters: 1/5;
-$gutter-styles: 'split';
 
 $include-clearfix: true;
 
 .container {
-  @include background-grid;
+  //@include background-grid;
   @extend %cf;
   min-height: 100%;
   margin: 0 auto;
-  padding: $margin 0 0;
 }

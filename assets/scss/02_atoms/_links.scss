@@ -1,0 +1,16 @@
+a {
+  @include link-colors($dark-gray-blue, $light-gray-blue, $dark-gray-blue, $dark-gray-blue, $dark-gray-blue);
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+  text-decoration: none;
+}
+
+.logo {
+  $d: darken($pale-gray, 15%);
+  @include link-colors($d, $d, $d, $d, $d);
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid $d;
+  padding: $margin 0 ($margin / 4);
+  margin: 0 0 (4 * $margin);
+}

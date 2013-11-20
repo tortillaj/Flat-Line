@@ -150,6 +150,8 @@ class Template
    */
   public static function recent_posts( $types = array( 'post' ) )
   {
+    global $post;
+    $current_post = $post;
     $return = '';
 
     $args = array( 'post_type'      => $types,
@@ -162,7 +164,9 @@ class Template
     if ( $posts->have_posts() ) {
       while ( $posts->have_posts() ) {
         $posts->the_post();
-        $return .= '<a href="' . get_permalink() . '" rel="bookmark" title="' . the_title_attribute( 'echo=0' ) . '">' . get_the_title() . '<time>' . get_the_date( 'F j, Y' ) . '</time></a>';
+        $id = get_the_ID();
+        $class = ($current_post->ID == $post->ID) ? 'current' : '';
+        $return .= '<a class="' . $class . '" href="' . get_permalink() . '" rel="bookmark" title="' . the_title_attribute( 'echo=0' ) . '">' . get_the_title() . '<time>' . get_the_date( 'F j, Y' ) . '</time></a>';
       }
     }
 

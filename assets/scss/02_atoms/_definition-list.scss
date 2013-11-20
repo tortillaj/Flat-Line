@@ -1,0 +1,21 @@
+dl {
+  @extend %cf;
+  width: 100%;
+  dt, dd {
+    display: block;
+    float: left;
+    border-top: 1px solid $light-gray;
+    &:first-child {
+      border: none;
+    }
+  }
+  dt {
+    width: 30%;
+    font-weight: 600;
+    text-align: right;
+    padding-right: 2%;
+  }
+  dd {
+    width: 68%;
+  }
+}

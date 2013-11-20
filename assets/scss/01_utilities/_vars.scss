@@ -12,13 +12,20 @@ $page-width: 96%;
 $margin: 10px;
 
 /* Typography */
-$ratio: fifth();
-$base-size: 14px;
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic|Vollkorn:400);
+
+$vollkorn: "Vollkorn", "Georgia", Cambria, Times New Roman, Times, serif;
+$sans: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$ratio: major-third();
+$base-size: 16px;
 $class-slug: ms;
 
 $normal: ms(0);
 $small: ms(0) * 0.85;
+$smaller: ms(0) * 0.75;
 $large: ms(0) * 1.15;
+$larger: ms(0) * 1.25;
 
 /* Colors */
 $off-black: #4d4d4d;

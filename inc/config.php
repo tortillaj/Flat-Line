@@ -24,7 +24,8 @@ function dawn_main_class()
 {
   if ( dawn_display_sidebar() ) {
     $class = '';
-  } else {
+  }
+  else {
     $class = '';
   }
 

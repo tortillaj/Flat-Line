@@ -1,0 +1,58 @@
+strong {
+  font-weight: 600;
+}
+
+em {
+  font-style: italic;
+}
+
+abbr {
+  border-bottom: 1px dotted $pale-gray;
+}
+
+cite, q {
+  font-style: italic;
+}
+
+code, kbd, pre, var {
+  font-family: Monaco, "Andale Mono", "Courier New", monospace;
+  background-color: $pale-gray;
+  font-size: $small;
+  padding: 1px 3px;
+}
+
+pre {
+  width: 100%;
+  overflow-x: scroll;
+}
+
+strike {
+  text-decoration: line-through;
+}
+
+sub {
+  vertical-align: sub;
+  font-size: $smaller;
+}
+
+sup {
+  vertical-align: super;
+  font-size: $smaller;
+}
+
+ins {
+  background: yellow;
+  font-size: $small;
+  padding: 1px 3px;
+  text-decoration: none;
+}
+
+p {
+  margin: $margin 0;
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

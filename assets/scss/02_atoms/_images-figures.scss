@@ -1,0 +1,34 @@
+img, figure {
+  &.aligncenter {
+    display: block;
+    margin: 0 auto;
+  }
+  &.alignleft {
+    float: left;
+    margin: 0 $margin 0 0;
+  }
+  &.alignright {
+    float: right;
+    margin: 0 0 0 $margin;
+  }
+  &.alignnone {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+figure {
+  &.thumbnail {
+    border: 1px solid $light-gray;
+    background: $pale-gray;
+    padding: $margin / 4;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  figcaption {
+    font-style: italic;
+    text-align: center;
+  }
+}

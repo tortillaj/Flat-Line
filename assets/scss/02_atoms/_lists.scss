@@ -1,5 +1,35 @@
 .recent-posts-navigation {
   a {
     display: block;
+
+  }
+}
+
+.article-content {
+  ul {
+    padding-left: $margin;
+    li {
+      list-style: disc;
+      margin-left: $margin;
+      li {
+        list-style: circle;
+        li {
+          list-style: square;
+        }
+      }
+    }
+  }
+  ol {
+    padding-left: $margin;
+    li {
+      list-style: decimal;
+      margin-left: $margin;
+      li {
+        list-style: upper-roman;
+        li {
+          list-style: lower-roman;
+        }
+      }
+    }
   }
 }

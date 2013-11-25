@@ -1,0 +1,20 @@
+.recent-posts-navigation {
+  a {
+    @include link-colors($black, $black, $black, $black, $black);
+    @include box-shadow(-2px 0 3px rgba(0,0,0,0.5) inset);
+    display: block;
+    padding: $margin;
+    &:hover {
+      background-color: $pale-gray;
+    }
+    &.current {
+      background-color: darken($sidebar-color, 10%);
+      color: $pale-gray;
+    }
+    time {
+      display: block;
+      font-size: $smaller;
+      margin-top: $margin / 2;
+    }
+  }
+}

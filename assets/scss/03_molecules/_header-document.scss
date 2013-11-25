@@ -4,10 +4,6 @@
 
   @include breakpoint($sapling) {
     @include grid-span(3, 1);
-    position: fixed;
-    top: 0;
-    height: 100%;
-    overflow-y: scroll;
   }
 
   @include breakpoint($bush) {

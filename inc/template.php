@@ -157,7 +157,7 @@ class Template
     $args = array( 'post_type'      => $types,
                    'orderby'        => 'date',
                    'post_status'    => 'publish',
-                   'posts_per_page' => -1 );
+                   'posts_per_page' => 5 );
 
     $posts = new WP_Query( $args );
 

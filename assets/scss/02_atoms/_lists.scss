@@ -1,31 +1,4 @@
-.recent-posts-navigation {
 
-  @include breakpoint($sapling) {
-    overflow-y: scroll;
-  }
-
-  a {
-    @include link-colors($black, $black, $black, $black, $black);
-    @include box-shadow(-2px 0 3px rgba(0,0,0,0.5) inset);
-    display: block;
-    background-color: $medium-green;
-    background-color: $yellow;
-    padding: $margin;
-    &:hover {
-      background-color: $pale-gray;
-    }
-    &.current {
-      background-color: darken($medium-green, 10%);
-      background-color: darken($yellow, 15%);
-      color: $pale-gray;
-    }
-    time {
-      display: block;
-      font-size: $smaller;
-      margin-top: $margin / 2;
-    }
-  }
-}
 
 .article-content {
   ul {

@@ -19,6 +19,10 @@
 
     <a class="logo" href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo( 'name' ); ?></a>
 
+    <nav role="navigation" id="mainNavigationContainer" class="nav nav--main">
+      <?php dawn_main_nav(); ?>
+    </nav>
+
     <?php if ( have_posts() ) : ?>
 
       <?php while ( have_posts() ) : the_post(); ?>
@@ -40,6 +44,8 @@
   <?php get_template_part( 'templates/document', 'footer' ); ?>
 
 </div>
+
+<?php wp_footer(); ?>
 
 </body>
 </html>

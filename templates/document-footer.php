@@ -1,8 +1,9 @@
 <footer class="footer" role="contentinfo">
 
   <?php dynamic_sidebar( 'sidebar_footer' ); ?>
-  <nav role="navigation"></nav>
+
+  <nav id="footerNavigationContainer" class="nav nav--footer" role="navigation">
+    <?php dawn_footer_nav(); ?>
+  </nav>
 
 </footer>
-
-<?php wp_footer(); ?>

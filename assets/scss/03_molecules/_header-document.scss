@@ -1,9 +1,12 @@
 .header-document {
 
+  background-color: $sidebar-color;
+
   @include grid-span(6, 1);
 
   @include breakpoint($sapling) {
     @include grid-span(3, 1);
+    @include box-shadow(-2px 0 3px rgba(0,0,0,0.5) inset);
   }
 
   @include breakpoint($bush) {

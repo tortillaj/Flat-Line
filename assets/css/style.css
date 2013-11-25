@@ -231,13 +231,13 @@ table tr:nth-of-type(even), table table tr.stripe, table table tr.striped { back
 .list-view article h2 { margin: 0; }
 
 /* line 1, ../scss/03_molecules/_header-document.scss */
-.header-document { width: 100%; float: right; margin-left: 0; margin-right: 0; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
+.header-document { background-color: #ab5c37; width: 100%; float: right; margin-left: 0; margin-right: 0; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
 /* line 48, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
 .header-document:before, .header-document:after { content: "."; display: block; height: 0; overflow: hidden; }
 /* line 55, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
 .header-document:after { clear: both; }
 @media (min-width: 48em) { /* line 1, ../scss/03_molecules/_header-document.scss */
-  .header-document { width: 32.07547%; float: left; margin-right: -100%; margin-left: 0%; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
+  .header-document { width: 32.07547%; float: left; margin-right: -100%; margin-left: 0%; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; -webkit-box-shadow: -2px 0 3px rgba(0, 0, 0, 0.5) inset; -moz-box-shadow: -2px 0 3px rgba(0, 0, 0, 0.5) inset; box-shadow: -2px 0 3px rgba(0, 0, 0, 0.5) inset; }
   /* line 48, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
   .header-document:before, .header-document:after { content: "."; display: block; height: 0; overflow: hidden; }
   /* line 55, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
@@ -262,18 +262,18 @@ table tr:nth-of-type(even), table table tr.stripe, table table tr.striped { back
   .header-document:after { clear: both; } }
 
 /* line 2, ../scss/03_molecules/_nav-recent-posts.scss */
-.recent-posts-navigation a { color: black; -webkit-box-shadow: -2px 0 3px rgba(0, 0, 0, 0.5) inset; -moz-box-shadow: -2px 0 3px rgba(0, 0, 0, 0.5) inset; box-shadow: -2px 0 3px rgba(0, 0, 0, 0.5) inset; display: block; padding: 10px; }
+.nav--recent-posts a { color: black; display: block; padding: 10px; }
 /* line 18, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-.recent-posts-navigation a:visited { color: black; }
+.nav--recent-posts a:visited { color: black; }
 /* line 21, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-.recent-posts-navigation a:focus { color: black; }
+.nav--recent-posts a:focus { color: black; }
 /* line 24, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-.recent-posts-navigation a:hover { color: black; }
+.nav--recent-posts a:hover { color: black; }
 /* line 27, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-.recent-posts-navigation a:active { color: black; }
-/* line 7, ../scss/03_molecules/_nav-recent-posts.scss */
-.recent-posts-navigation a:hover { background-color: #eaeaea; }
-/* line 10, ../scss/03_molecules/_nav-recent-posts.scss */
-.recent-posts-navigation a.current { background-color: #84472b; color: #eaeaea; }
-/* line 14, ../scss/03_molecules/_nav-recent-posts.scss */
-.recent-posts-navigation a time { display: block; font-size: 12px; margin-top: 5px; }
+.nav--recent-posts a:active { color: black; }
+/* line 6, ../scss/03_molecules/_nav-recent-posts.scss */
+.nav--recent-posts a:hover { background-color: #eaeaea; }
+/* line 9, ../scss/03_molecules/_nav-recent-posts.scss */
+.nav--recent-posts a.current { background-color: #84472b; color: #eaeaea; }
+/* line 13, ../scss/03_molecules/_nav-recent-posts.scss */
+.nav--recent-posts a time { display: block; font-size: 12px; margin-top: 5px; }

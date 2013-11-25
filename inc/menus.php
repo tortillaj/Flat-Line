@@ -56,7 +56,7 @@ function dawn_footer_nav()
                       'after'           => '',
                       'link_before'     => '',
                       'link_after'      => '',
-                      'depth'           => 0,
+                      'depth'           => 1,
                       'fallback_cb'     => 'dawn_footer_nav_fallback' ) );
 }
 

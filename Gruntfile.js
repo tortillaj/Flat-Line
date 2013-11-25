@@ -1,99 +1,104 @@
-'use strict';
-module.exports = function (grunt) {
+(function() {
 
-  // load all grunt tasks matching the `grunt-*` pattern
-  require('load-grunt-tasks')(grunt);
+  'use strict';
 
-  grunt.initConfig({
+  module.exports = function (grunt) {
 
-    // watch for changes and trigger compass, jshint, uglify and livereload
-    //
-    // if it takes too long for livereload, just remove the js files from the watch process ...
-    //
-    // to use LiveReload, make sure to install the browser extension for Firefox or Chrome
-    //
-    watch: {
-      compass: {
-        files: ['assets/scss/**/*.{scss,sass}'],
-        tasks: ['compass']
-      },
-      js: {
-        files: '<%= jshint.all %>',
-        tasks: ['jshint', 'uglify']
-      },
-      livereload: {
-        options: { livereload: true },
-        files: ['assets/css/style.css', 'assets/js/source/*.js', '**/*.php', 'assets/images/**/*.{png,jpg,jpeg,gif,webp,svg}']
-      }
-    },
+    // load all grunt tasks matching the `grunt-*` pattern
+    require('load-grunt-tasks')(grunt);
 
-    // compass and scss
-    compass: {
-      dist: {
-        options: {
-          config: 'config.rb',
-          force: true
-        }
-      }
-    },
+    grunt.initConfig({
 
-    // javascript linting with jshint
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc',
-        "force": true
-      },
-      all: [
-        'Gruntfile.js',
-        'assets/js/source/site/*.js'
-      ]
-    },
-
-    // uglify to concat, minify, and make source maps
-    uglify: {
-
-      // jQuery is built separately here to
-      // provide a fallback if the CDN fails
-      jquery: {
-        files: {
-          'assets/js/build/jquery.min.js': [
-            'assets/js/source/jquery/jquery.js'
-          ]
-        }
-      },
-
-      global: {
-        files: {
-          'assets/js/build/global.min.js': [
-            'assets/js/source/global.js'
-          ]
-        }
-      }
-
-    },
-
-    // image optimization
-    imagemin: {
-      dist: {
-        options: {
-          optimizationLevel: 7,
-          progressive: true
+      // watch for changes and trigger compass, jshint, uglify and livereload
+      //
+      // if it takes too long for livereload, just remove the js files from the watch process ...
+      //
+      // to use LiveReload, make sure to install the browser extension for Firefox or Chrome
+      //
+      watch: {
+        compass: {
+          files: ['assets/scss/**/*.{scss,sass}'],
+          tasks: ['compass']
         },
-        files: [
-          {
-            expand: true,
-            cwd: 'assets/images/',
-            src: '**/*',
-            dest: 'assets/images/'
+        js: {
+          files: '<%= jshint.all %>',
+          tasks: ['jshint', 'uglify']
+        },
+        livereload: {
+          options: { livereload: true },
+          files: ['assets/css/style.css', 'assets/js/source/*.js', '**/*.php', 'assets/images/**/*.{png,jpg,jpeg,gif,webp,svg}']
+        }
+      },
+
+      // compass and scss
+      compass: {
+        dist: {
+          options: {
+            config: 'config.rb',
+            force: true
           }
+        }
+      },
+
+      // javascript linting with jshint
+      jshint: {
+        options: {
+          jshintrc: '.jshintrc',
+          "force": true
+        },
+        all: [
+          'Gruntfile.js',
+          'assets/js/source/global.js'
         ]
-      }
-    },
+      },
 
-  });
+      // uglify to concat, minify, and make source maps
+      uglify: {
 
-  // register default task
-  grunt.registerTask('default', ['watch']);
+        // jQuery is built separately here to
+        // provide a fallback if the CDN fails
+        jquery: {
+          files: {
+            'assets/js/build/jquery.min.js': [
+              'assets/js/source/jquery/jquery.js'
+            ]
+          }
+        },
+
+        global: {
+          files: {
+            'assets/js/build/global.min.js': [
+              'assets/js/source/global.js'
+            ]
+          }
+        }
+
+      },
+
+      // image optimization
+      imagemin: {
+        dist: {
+          options: {
+            optimizationLevel: 7,
+            progressive: true
+          },
+          files: [
+            {
+              expand: true,
+              cwd: 'assets/images/',
+              src: '**/*',
+              dest: 'assets/images/'
+            }
+          ]
+        }
+      },
+
+    });
+
+    // register default task
+    grunt.registerTask('default', ['watch']);
 
 
-};
+  };
+
+})();

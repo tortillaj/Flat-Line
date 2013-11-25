@@ -8,11 +8,10 @@
   "camelcase": true,
   "latedef": true,
   "noarg": true,
-  "undef": true,
+  "undef": false,
   "browser": true,
   "trailing": false,
   "jquery": true,
   "curly": true,
-  "supernew": true,
-  "indent": 4
+  "supernew": true
 }

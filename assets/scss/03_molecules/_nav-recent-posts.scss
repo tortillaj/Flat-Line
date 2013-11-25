@@ -3,12 +3,10 @@
     @include link-colors($black, $black, $black, $black, $black);
     display: block;
     padding: $margin;
-    &:hover {
-      background-color: $pale-gray;
-    }
-    &.current {
-      background-color: darken($sidebar-color, 10%);
-      color: $pale-gray;
+    border-top: 1px solid $dark-gray;
+    &:hover, &.current {
+      @include box-shadow(-2px 0 3px rgba(0,0,0,0.5) inset);
+      background-color: $dark-orange;
     }
     time {
       display: block;

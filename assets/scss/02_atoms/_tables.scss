@@ -4,7 +4,7 @@ table {
   border-spacing: 0;
   margin-bottom: 20px;
   width: 100%;
-  border: 1px solid $medium-gray;
+  border: 1px solid $dark-gray;
 
   caption {
     text-align: center;
@@ -19,16 +19,16 @@ table {
     padding: $margin;
     vertical-align: top;
     text-align: left;
-    border: 1px solid $medium-gray;
+    border: 1px solid $dark-gray;
   }
 
   tr td, tbody tr td {
-    font-size: $normal;
+    font-size: $regular;
   }
 
   thead {
     background-color: $light-gray;
-    color: $off-black;
+    color: $dark-gray;
 
     tr th {
       font-size: $large;

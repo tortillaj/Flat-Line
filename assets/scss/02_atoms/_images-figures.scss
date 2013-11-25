@@ -19,7 +19,7 @@ img, figure {
 
 figure {
   &.thumbnail {
-    border: 1px solid $light-gray;
+    border: 1px solid $lightest-gray;
     background: $pale-gray;
     padding: $margin / 4;
   }
@@ -30,5 +30,6 @@ figure {
   figcaption {
     font-style: italic;
     text-align: center;
+    font-size: $small;
   }
 }

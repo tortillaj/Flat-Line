@@ -1,4 +1,4 @@
-<header class="header-document" role="banner">
+<header class="header--document" role="banner">
 
   <nav role="navigation" id="gridLinksContainer" class="nav nav--grid-links">
     <?php dawn_grid_links(); ?>

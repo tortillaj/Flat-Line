@@ -38,6 +38,8 @@ body { line-height: 24px; font-size: 16px; font-family: "Source Sans Pro", "Helv
 
 /* line 12, ../scss/01_utilities/_grid.scss */
 .container { min-height: 100%; margin: 0 auto; }
+@media (min-width: 48em) { /* line 12, ../scss/01_utilities/_grid.scss */
+  .container { width: 99%; margin: 0; } }
 
 /* line 1, ../scss/01_utilities/_clearfix.scss */
 .container, .clearfix, dl { *zoom: 1; }
@@ -49,41 +51,44 @@ body { line-height: 24px; font-size: 16px; font-family: "Source Sans Pro", "Helv
 /* line 1, ../scss/02_atoms/_blockquote.scss */
 blockquote { width: 96%; padding: 20px; margin: 10px auto; background: #eaeaea; font-size: 18.4px; font-style: italic; line-height: 1.5; }
 
+/* line 1, ../scss/02_atoms/_borders.scss */
+.footer--document, .sidebar--primary { border-top: 3px double #eaeaea; }
+
 /* line 1, ../scss/02_atoms/_column-main.scss */
-.main, .sidebar { width: 100%; float: right; margin-left: 0; margin-right: 0; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
+.footer--document, .main, .sidebar--primary { width: 100%; float: right; margin-left: 0; margin-right: 0; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
 /* line 48, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-.main:before, .sidebar:before, .main:after, .sidebar:after { content: "."; display: block; height: 0; overflow: hidden; }
+.footer--document:before, .main:before, .sidebar--primary:before, .footer--document:after, .main:after, .sidebar--primary:after { content: "."; display: block; height: 0; overflow: hidden; }
 /* line 55, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-.main:after, .sidebar:after { clear: both; }
+.footer--document:after, .main:after, .sidebar--primary:after { clear: both; }
 @media (min-width: 48em) { /* line 1, ../scss/02_atoms/_column-main.scss */
-  .main, .sidebar { width: 66.03774%; float: right; margin-left: 0; margin-right: 0; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
+  .footer--document, .main, .sidebar--primary { width: 66.03774%; float: right; margin-left: 0; margin-right: 0; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
   /* line 48, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-  .main:before, .sidebar:before, .main:after, .sidebar:after { content: "."; display: block; height: 0; overflow: hidden; }
+  .footer--document:before, .main:before, .sidebar--primary:before, .footer--document:after, .main:after, .sidebar--primary:after { content: "."; display: block; height: 0; overflow: hidden; }
   /* line 55, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-  .main:after, .sidebar:after { clear: both; } }
+  .footer--document:after, .main:after, .sidebar--primary:after { clear: both; } }
 @media (min-width: 67.5em) { /* line 1, ../scss/02_atoms/_column-main.scss */
-  .main, .sidebar { width: 74.64789%; float: right; margin-left: 0; margin-right: 0; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
+  .footer--document, .main, .sidebar--primary { width: 74.64789%; float: right; margin-left: 0; margin-right: 0; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
   /* line 48, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-  .main:before, .sidebar:before, .main:after, .sidebar:after { content: "."; display: block; height: 0; overflow: hidden; }
+  .footer--document:before, .main:before, .sidebar--primary:before, .footer--document:after, .main:after, .sidebar--primary:after { content: "."; display: block; height: 0; overflow: hidden; }
   /* line 55, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-  .main:after, .sidebar:after { clear: both; } }
+  .footer--document:after, .main:after, .sidebar--primary:after { clear: both; } }
 @media (min-width: 80em) { /* line 1, ../scss/02_atoms/_column-main.scss */
-  .main, .sidebar { width: 59.55056%; float: left; margin-right: -100%; margin-left: 20.22472%; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
+  .footer--document, .main, .sidebar--primary { width: 59.55056%; float: left; margin-right: -100%; margin-left: 20.22472%; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
   /* line 48, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-  .main:before, .sidebar:before, .main:after, .sidebar:after { content: "."; display: block; height: 0; overflow: hidden; }
+  .footer--document:before, .main:before, .sidebar--primary:before, .footer--document:after, .main:after, .sidebar--primary:after { content: "."; display: block; height: 0; overflow: hidden; }
   /* line 55, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-  .main:after, .sidebar:after { clear: both; } }
+  .footer--document:after, .main:after, .sidebar--primary:after { clear: both; } }
 @media (min-width: 93.75em) { /* line 1, ../scss/02_atoms/_column-main.scss */
-  .main, .sidebar { width: 49.53271%; float: left; margin-right: -100%; margin-left: 11.21495%; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
+  .footer--document, .main, .sidebar--primary { width: 49.53271%; float: left; margin-right: -100%; margin-left: 11.21495%; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
   /* line 48, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-  .main:before, .sidebar:before, .main:after, .sidebar:after { content: "."; display: block; height: 0; overflow: hidden; }
+  .footer--document:before, .main:before, .sidebar--primary:before, .footer--document:after, .main:after, .sidebar--primary:after { content: "."; display: block; height: 0; overflow: hidden; }
   /* line 55, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-  .main:after, .sidebar:after { clear: both; } }
+  .footer--document:after, .main:after, .sidebar--primary:after { clear: both; } }
 
 /* line 1, ../scss/02_atoms/_definition-list.scss */
 dl { width: 100%; }
 /* line 4, ../scss/02_atoms/_definition-list.scss */
-dl dt, dl dd { display: block; float: left; border-top: 1px solid #859081; }
+dl dt, dl dd { display: block; float: left; border-top: 1px solid #aaaaaa; }
 /* line 8, ../scss/02_atoms/_definition-list.scss */
 dl dt:first-child, dl dd:first-child { border: none; }
 /* line 12, ../scss/02_atoms/_definition-list.scss */
@@ -124,24 +129,35 @@ img.alignright, figure.alignright { float: right; margin: 0 0 0 10px; }
 img.alignnone, figure.alignnone { max-width: 100%; height: auto; }
 
 /* line 21, ../scss/02_atoms/_images-figures.scss */
-figure.thumbnail { border: 1px solid #859081; background: #eaeaea; padding: 2.5px; }
+figure.thumbnail { border: 1px solid #cccccc; background: #eaeaea; padding: 2.5px; }
 /* line 26, ../scss/02_atoms/_images-figures.scss */
 figure img { max-width: 100%; height: auto; }
 /* line 30, ../scss/02_atoms/_images-figures.scss */
-figure figcaption { font-style: italic; text-align: center; }
+figure figcaption { font-style: italic; text-align: center; font-size: 13.6px; }
 
 /* line 1, ../scss/02_atoms/_links.scss */
-a { color: #31303f; -ms-word-wrap: break-word; word-wrap: break-word; text-decoration: none; }
+a { color: black; -ms-word-wrap: break-word; word-wrap: break-word; text-decoration: none; }
 /* line 18, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-a:visited { color: #31303f; }
+a:visited { color: black; }
 /* line 21, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-a:focus { color: #31303f; }
+a:focus { color: black; }
 /* line 24, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-a:hover { color: #a8a596; }
+a:hover { color: black; }
 /* line 27, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
-a:active { color: #31303f; }
+a:active { color: black; }
 
-/* line 8, ../scss/02_atoms/_links.scss */
+/* line 9, ../scss/02_atoms/_links.scss */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: black; }
+/* line 18, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited { color: black; }
+/* line 21, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+h1 a:focus, h2 a:focus, h3 a:focus, h4 a:focus, h5 a:focus, h6 a:focus { color: black; }
+/* line 24, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover { color: black; }
+/* line 27, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active { color: black; }
+
+/* line 14, ../scss/02_atoms/_links.scss */
 .logo { color: #c4c4c4; display: block; width: 100%; border-bottom: 1px solid #c4c4c4; padding: 10px 0 2.5px; margin: 0 0 40px; }
 /* line 18, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 .logo:visited { color: #c4c4c4; }
@@ -152,21 +168,30 @@ a:active { color: #31303f; }
 /* line 27, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 .logo:active { color: #c4c4c4; }
 
-/* line 4, ../scss/02_atoms/_lists.scss */
-.article-content ul { padding-left: 10px; }
+/* line 2, ../scss/02_atoms/_lists.scss */
+.list-inline li, .nav--footer li { display: -moz-inline-stack; display: inline-block; vertical-align: middle; *vertical-align: auto; zoom: 1; *display: inline; float: left; margin: 0 10px 0 0; }
 /* line 6, ../scss/02_atoms/_lists.scss */
+.list-inline li:after, .nav--footer li:after { content: "\2022"; margin-left: 10px; }
+/* line 10, ../scss/02_atoms/_lists.scss */
+.list-inline li:last-child, .nav--footer li:last-child { margin: 0; }
+/* line 12, ../scss/02_atoms/_lists.scss */
+.list-inline li:last-child:after, .nav--footer li:last-child:after { content: ""; margin: 0; }
+
+/* line 21, ../scss/02_atoms/_lists.scss */
+.article-content ul { padding-left: 10px; }
+/* line 23, ../scss/02_atoms/_lists.scss */
 .article-content ul li { list-style: disc; margin-left: 10px; }
-/* line 9, ../scss/02_atoms/_lists.scss */
+/* line 26, ../scss/02_atoms/_lists.scss */
 .article-content ul li li { list-style: circle; }
-/* line 11, ../scss/02_atoms/_lists.scss */
+/* line 28, ../scss/02_atoms/_lists.scss */
 .article-content ul li li li { list-style: square; }
-/* line 17, ../scss/02_atoms/_lists.scss */
+/* line 34, ../scss/02_atoms/_lists.scss */
 .article-content ol { padding-left: 10px; }
-/* line 19, ../scss/02_atoms/_lists.scss */
+/* line 36, ../scss/02_atoms/_lists.scss */
 .article-content ol li { list-style: decimal; margin-left: 10px; }
-/* line 22, ../scss/02_atoms/_lists.scss */
+/* line 39, ../scss/02_atoms/_lists.scss */
 .article-content ol li li { list-style: upper-roman; }
-/* line 24, ../scss/02_atoms/_lists.scss */
+/* line 41, ../scss/02_atoms/_lists.scss */
 .article-content ol li li li { list-style: lower-roman; }
 
 /* line 1, ../scss/02_atoms/_paragraphs.scss */
@@ -207,15 +232,15 @@ p:first-child { margin-top: 0; }
 p:last-child { margin-bottom: 0; }
 
 /* line 1, ../scss/02_atoms/_tables.scss */
-table { display: table; border-collapse: collapse; border-spacing: 0; margin-bottom: 20px; width: 100%; border: 1px solid #788474; }
+table { display: table; border-collapse: collapse; border-spacing: 0; margin-bottom: 20px; width: 100%; border: 1px solid #4d4d4d; }
 /* line 9, ../scss/02_atoms/_tables.scss */
 table caption { text-align: center; font-size: 18.4px; padding: .75em; }
 /* line 17, ../scss/02_atoms/_tables.scss */
-table thead th, table tbody td, table tr td { display: table-cell; padding: 10px; vertical-align: top; text-align: left; border: 1px solid #788474; }
+table thead th, table tbody td, table tr td { display: table-cell; padding: 10px; vertical-align: top; text-align: left; border: 1px solid #4d4d4d; }
 /* line 25, ../scss/02_atoms/_tables.scss */
 table tr td, table tbody tr td { font-size: 16px; }
 /* line 29, ../scss/02_atoms/_tables.scss */
-table thead { background-color: #859081; color: #4d4d4d; }
+table thead { background-color: #aaaaaa; color: #4d4d4d; }
 /* line 33, ../scss/02_atoms/_tables.scss */
 table thead tr th { font-size: 18.4px; font-weight: bold; vertical-align: bottom; }
 /* line 42, ../scss/02_atoms/_tables.scss */
@@ -230,39 +255,60 @@ table tr:nth-of-type(even), table table tr.stripe, table table tr.striped { back
 /* line 4, ../scss/03_molecules/_excerpt.scss */
 .list-view article h2 { margin: 0; }
 
+/* line 1, ../scss/03_molecules/_footer-document.scss */
+.footer--document { padding: 30px 0; }
+
 /* line 1, ../scss/03_molecules/_header-document.scss */
-.header-document { background-color: #ab5c37; width: 100%; float: right; margin-left: 0; margin-right: 0; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
+.header--document { background-color: #f3b562; width: 100%; float: right; margin-left: 0; margin-right: 0; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
 /* line 48, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-.header-document:before, .header-document:after { content: "."; display: block; height: 0; overflow: hidden; }
+.header--document:before, .header--document:after { content: "."; display: block; height: 0; overflow: hidden; }
 /* line 55, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-.header-document:after { clear: both; }
+.header--document:after { clear: both; }
 @media (min-width: 48em) { /* line 1, ../scss/03_molecules/_header-document.scss */
-  .header-document { width: 32.07547%; float: left; margin-right: -100%; margin-left: 0%; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; -webkit-box-shadow: -2px 0 3px rgba(0, 0, 0, 0.5) inset; -moz-box-shadow: -2px 0 3px rgba(0, 0, 0, 0.5) inset; box-shadow: -2px 0 3px rgba(0, 0, 0, 0.5) inset; }
+  .header--document { width: 32.07547%; float: left; margin-right: -100%; margin-left: 0%; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; -webkit-box-shadow: -2px 0 3px rgba(0, 0, 0, 0.5) inset; -moz-box-shadow: -2px 0 3px rgba(0, 0, 0, 0.5) inset; box-shadow: -2px 0 3px rgba(0, 0, 0, 0.5) inset; }
   /* line 48, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-  .header-document:before, .header-document:after { content: "."; display: block; height: 0; overflow: hidden; }
+  .header--document:before, .header--document:after { content: "."; display: block; height: 0; overflow: hidden; }
   /* line 55, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-  .header-document:after { clear: both; } }
+  .header--document:after { clear: both; } }
 @media (min-width: 67.5em) { /* line 1, ../scss/03_molecules/_header-document.scss */
-  .header-document { width: 23.94366%; float: left; margin-right: -100%; margin-left: 0%; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
+  .header--document { width: 23.94366%; float: left; margin-right: -100%; margin-left: 0%; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
   /* line 48, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-  .header-document:before, .header-document:after { content: "."; display: block; height: 0; overflow: hidden; }
+  .header--document:before, .header--document:after { content: "."; display: block; height: 0; overflow: hidden; }
   /* line 55, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-  .header-document:after { clear: both; } }
+  .header--document:after { clear: both; } }
 @media (min-width: 80em) { /* line 1, ../scss/03_molecules/_header-document.scss */
-  .header-document { width: 19.10112%; float: left; margin-right: -100%; margin-left: 0%; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
+  .header--document { width: 19.10112%; float: left; margin-right: -100%; margin-left: 0%; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
   /* line 48, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-  .header-document:before, .header-document:after { content: "."; display: block; height: 0; overflow: hidden; }
+  .header--document:before, .header--document:after { content: "."; display: block; height: 0; overflow: hidden; }
   /* line 55, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-  .header-document:after { clear: both; } }
+  .header--document:after { clear: both; } }
 @media (min-width: 93.75em) { /* line 1, ../scss/03_molecules/_header-document.scss */
-  .header-document { width: 10.28037%; float: left; margin-right: -100%; margin-left: 0%; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
+  .header--document { width: 10.28037%; float: left; margin-right: -100%; margin-left: 0%; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
   /* line 48, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-  .header-document:before, .header-document:after { content: "."; display: block; height: 0; overflow: hidden; }
+  .header--document:before, .header--document:after { content: "."; display: block; height: 0; overflow: hidden; }
   /* line 55, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-  .header-document:after { clear: both; } }
+  .header--document:after { clear: both; } }
+
+/* line 1, ../scss/03_molecules/_main.scss */
+.main { margin: 0 0 100px; }
+
+/* line 5, ../scss/03_molecules/_nav-footer.scss */
+.nav--footer ul li a { color: #aaaaaa; }
+/* line 18, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+.nav--footer ul li a:visited { color: #aaaaaa; }
+/* line 21, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+.nav--footer ul li a:focus { color: #aaaaaa; }
+/* line 24, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+.nav--footer ul li a:hover { color: #aaaaaa; }
+/* line 27, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
+.nav--footer ul li a:active { color: #aaaaaa; }
+/* line 8, ../scss/03_molecules/_nav-footer.scss */
+.nav--footer ul li:after { color: #aaaaaa; }
+/* line 11, ../scss/03_molecules/_nav-footer.scss */
+.nav--footer ul li ul { display: none; }
 
 /* line 2, ../scss/03_molecules/_nav-recent-posts.scss */
-.nav--recent-posts a { color: black; display: block; padding: 10px; }
+.nav--recent-posts a { color: black; display: block; padding: 10px; border-top: 1px solid #4d4d4d; }
 /* line 18, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 .nav--recent-posts a:visited { color: black; }
 /* line 21, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
@@ -271,9 +317,10 @@ table tr:nth-of-type(even), table table tr.stripe, table table tr.striped { back
 .nav--recent-posts a:hover { color: black; }
 /* line 27, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 .nav--recent-posts a:active { color: black; }
-/* line 6, ../scss/03_molecules/_nav-recent-posts.scss */
-.nav--recent-posts a:hover { background-color: #eaeaea; }
-/* line 9, ../scss/03_molecules/_nav-recent-posts.scss */
-.nav--recent-posts a.current { background-color: #84472b; color: #eaeaea; }
-/* line 13, ../scss/03_molecules/_nav-recent-posts.scss */
+/* line 7, ../scss/03_molecules/_nav-recent-posts.scss */
+.nav--recent-posts a:hover, .nav--recent-posts a.current { -webkit-box-shadow: -2px 0 3px rgba(0, 0, 0, 0.5) inset; -moz-box-shadow: -2px 0 3px rgba(0, 0, 0, 0.5) inset; box-shadow: -2px 0 3px rgba(0, 0, 0, 0.5) inset; background-color: #f0a541; }
+/* line 11, ../scss/03_molecules/_nav-recent-posts.scss */
 .nav--recent-posts a time { display: block; font-size: 12px; margin-top: 5px; }
+
+/* line 1, ../scss/03_molecules/_sidebar-primary.scss */
+.sidebar--primary { padding: 30px 0; }

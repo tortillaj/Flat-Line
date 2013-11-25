@@ -1,0 +1,16 @@
+.nav--footer {
+  @extend .list-inline;
+  ul {
+    li {
+      a {
+        @include link-colors($light-gray, $light-gray, $light-gray, $light-gray, $light-gray);
+      }
+      &:after {
+        color: $light-gray;
+      }
+      ul {
+        display: none;
+      }
+    }
+  }
+}

@@ -9,6 +9,7 @@ require_once locate_template( '/inc/sidebar.php' );
 
 /* include theme related configuration functions */
 require_once locate_template( '/inc/config.php' );
+require_once locate_template( '/inc/customizations.php' );
 require_once locate_template( '/inc/post-types.php' );
 require_once locate_template( '/inc/styles.php' );
 require_once locate_template( '/inc/scripts.php' );

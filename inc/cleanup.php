@@ -172,22 +172,6 @@ function dawn_remove_dashboard_widgets()
 add_action( 'admin_init', 'dawn_remove_dashboard_widgets' );
 
 /**
- * Clean up the_excerpt()
- */
-function dawn_excerpt_length( $length )
-{
-  return POST_EXCERPT_LENGTH;
-}
-
-function dawn_excerpt_more( $more )
-{
-  return ' &hellip; <a href="' . get_permalink() . '">' . __( 'Continued', 'dawn' ) . '</a>';
-}
-
-add_filter( 'excerpt_length', 'dawn_excerpt_length' );
-add_filter( 'excerpt_more', 'dawn_excerpt_more' );
-
-/**
  * Remove unnecessary self-closing tags
  */
 function dawn_remove_self_closing_tags( $input )

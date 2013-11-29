@@ -41,7 +41,7 @@ class Template
       $content = self::embolden_replace( $content );
     }
 
-    return $content . '<a href="' . get_permalink() . '">Read More &rarr;</a>';
+    return $content . '<a class="readmore" href="' . get_permalink() . '">Read More &rarr;</a>';
 
   }
 

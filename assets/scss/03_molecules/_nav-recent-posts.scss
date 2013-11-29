@@ -4,6 +4,7 @@
     display: block;
     padding: $margin;
     border-top: 1px solid $dark-gray;
+    border-bottom: none;
     &:hover, &.current {
       @include box-shadow(-2px 0 3px rgba(0,0,0,0.5) inset);
       background-color: $dark-orange;

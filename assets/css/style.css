@@ -42,17 +42,20 @@ body { line-height: 24px; font-size: 16px; font-family: "Source Sans Pro", "Helv
   .container { width: 99%; margin: 0; } }
 
 /* line 1, ../scss/01_utilities/_clearfix.scss */
-.container, .clearfix, dl { *zoom: 1; }
+.container, .clearfix, .footer--document, .sidebar--primary, dl, .list-view .post { *zoom: 1; }
 /* line 3, ../scss/01_utilities/_clearfix.scss */
-.container:before, .clearfix:before, dl:before, .container:after, .clearfix:after, dl:after { content: " "; display: table; }
+.container:before, .clearfix:before, .footer--document:before, .sidebar--primary:before, dl:before, .list-view .post:before, .container:after, .clearfix:after, .footer--document:after, .sidebar--primary:after, dl:after, .list-view .post:after { content: " "; display: table; }
 /* line 7, ../scss/01_utilities/_clearfix.scss */
-.container:after, .clearfix:after, dl:after { clear: both; }
+.container:after, .clearfix:after, .footer--document:after, .sidebar--primary:after, dl:after, .list-view .post:after { clear: both; }
 
 /* line 1, ../scss/02_atoms/_blockquote.scss */
 blockquote { width: 96%; padding: 20px; margin: 40px auto; background: #eaeaea; font-size: 18.4px; font-style: italic; line-height: 1.5; }
 
 /* line 1, ../scss/02_atoms/_borders.scss */
-.footer--document, .sidebar--primary { border-top: 3px double #eaeaea; }
+.footer--document, .sidebar--primary, .list-view .post { border-top: 3px double #eaeaea; }
+
+/* line 5, ../scss/02_atoms/_borders.scss */
+a { border-bottom: 1px dotted #eaeaea; }
 
 /* line 1, ../scss/02_atoms/_column-main.scss */
 .main { width: 100%; float: right; margin-left: 0; margin-right: 0; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
@@ -84,6 +87,9 @@ blockquote { width: 96%; padding: 20px; margin: 40px auto; background: #eaeaea; 
   .main:before, .main:after { content: "."; display: block; height: 0; overflow: hidden; }
   /* line 55, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
   .main:after { clear: both; } }
+
+/* line 1, ../scss/02_atoms/_column-sidebar.scss */
+.footer--document, .sidebar--primary { padding: 30px 0; float: left; clear: left; width: 100%; }
 
 /* line 1, ../scss/02_atoms/_definition-list.scss */
 dl { width: 100%; }
@@ -146,8 +152,8 @@ a:hover { color: black; }
 /* line 27, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 a:active { color: black; }
 
-/* line 9, ../scss/02_atoms/_links.scss */
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: black; }
+/* line 10, ../scss/02_atoms/_links.scss */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: black; border: none; }
 /* line 18, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited { color: black; }
 /* line 21, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
@@ -157,7 +163,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover { color: 
 /* line 27, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active { color: black; }
 
-/* line 14, ../scss/02_atoms/_links.scss */
+/* line 16, ../scss/02_atoms/_links.scss */
 .logo { color: #c4c4c4; display: block; border-bottom: 1px solid #c4c4c4; padding: 10px 0 2.5px; margin-bottom: 40px; }
 /* line 18, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 .logo:visited { color: #c4c4c4; }
@@ -168,6 +174,9 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active { c
 /* line 27, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 .logo:active { color: #c4c4c4; }
 
+/* line 25, ../scss/02_atoms/_links.scss */
+.readmore { display: -moz-inline-stack; display: inline-block; vertical-align: middle; *vertical-align: auto; zoom: 1; *display: inline; margin: 0 0 0 20px; }
+
 /* line 2, ../scss/02_atoms/_lists.scss */
 .list-inline li, .nav--footer li { display: -moz-inline-stack; display: inline-block; vertical-align: middle; *vertical-align: auto; zoom: 1; *display: inline; float: left; margin: 0 10px 0 0; }
 /* line 6, ../scss/02_atoms/_lists.scss */
@@ -176,23 +185,32 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active { c
 .list-inline li:last-child, .nav--footer li:last-child { margin: 0; }
 /* line 12, ../scss/02_atoms/_lists.scss */
 .list-inline li:last-child:after, .nav--footer li:last-child:after { content: ""; margin: 0; }
+/* line 17, ../scss/02_atoms/_lists.scss */
+.list-inline li a, .nav--footer li a { border: none; }
 
-/* line 21, ../scss/02_atoms/_lists.scss */
+/* line 24, ../scss/02_atoms/_lists.scss */
 .article-content ul { padding-left: 10px; }
-/* line 23, ../scss/02_atoms/_lists.scss */
-.article-content ul li { list-style: disc; margin-left: 10px; }
 /* line 26, ../scss/02_atoms/_lists.scss */
+.article-content ul li { list-style: disc; margin-left: 10px; }
+/* line 29, ../scss/02_atoms/_lists.scss */
 .article-content ul li li { list-style: circle; }
-/* line 28, ../scss/02_atoms/_lists.scss */
+/* line 31, ../scss/02_atoms/_lists.scss */
 .article-content ul li li li { list-style: square; }
-/* line 34, ../scss/02_atoms/_lists.scss */
+/* line 37, ../scss/02_atoms/_lists.scss */
 .article-content ol { padding-left: 10px; }
-/* line 36, ../scss/02_atoms/_lists.scss */
-.article-content ol li { list-style: decimal; margin-left: 10px; }
 /* line 39, ../scss/02_atoms/_lists.scss */
+.article-content ol li { list-style: decimal; margin-left: 10px; }
+/* line 42, ../scss/02_atoms/_lists.scss */
 .article-content ol li li { list-style: upper-roman; }
-/* line 41, ../scss/02_atoms/_lists.scss */
+/* line 44, ../scss/02_atoms/_lists.scss */
 .article-content ol li li li { list-style: lower-roman; }
+
+/* line 53, ../scss/02_atoms/_lists.scss */
+.list-view .post { margin: 30px 0; padding-top: 30px; }
+/* line 58, ../scss/02_atoms/_lists.scss */
+.list-view .post:first-of-type { border: none; margin-top: 0; padding-top: 0; }
+/* line 63, ../scss/02_atoms/_lists.scss */
+.list-view .post:last-child { margin-bottom: 0; }
 
 /* line 1, ../scss/02_atoms/_paragraphs.scss */
 strong { font-weight: 600; }
@@ -231,6 +249,9 @@ p:first-child { margin-top: 0; }
 /* line 55, ../scss/02_atoms/_paragraphs.scss */
 p:last-child { margin-bottom: 0; }
 
+/* line 61, ../scss/02_atoms/_paragraphs.scss */
+.article-excerpt p { white-space: pre-wrap; }
+
 /* line 1, ../scss/02_atoms/_tables.scss */
 table { display: table; border-collapse: collapse; border-spacing: 0; margin-bottom: 20px; width: 100%; border: 1px solid #4d4d4d; }
 /* line 9, ../scss/02_atoms/_tables.scss */
@@ -254,9 +275,6 @@ table tr:nth-of-type(even), table table tr.stripe, table table tr.striped { back
 .list-view article:last-child, .list-view article:last-of-type { margin-bottom: 0; }
 /* line 4, ../scss/03_molecules/_excerpt.scss */
 .list-view article h2 { margin: 0; }
-
-/* line 1, ../scss/03_molecules/_footer-document.scss */
-.footer--document { padding: 30px 0; }
 
 /* line 1, ../scss/03_molecules/_header-document.scss */
 .header--document { background-color: #f3b562; width: 100%; float: right; margin-left: 0; margin-right: 0; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
@@ -308,7 +326,7 @@ table tr:nth-of-type(even), table table tr.stripe, table table tr.striped { back
 .nav--footer ul li ul { display: none; }
 
 /* line 2, ../scss/03_molecules/_nav-recent-posts.scss */
-.nav--recent-posts a { color: black; display: block; padding: 10px; border-top: 1px solid #4d4d4d; }
+.nav--recent-posts a { color: black; display: block; padding: 10px; border-top: 1px solid #4d4d4d; border-bottom: none; }
 /* line 18, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 .nav--recent-posts a:visited { color: black; }
 /* line 21, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
@@ -317,10 +335,7 @@ table tr:nth-of-type(even), table table tr.stripe, table table tr.striped { back
 .nav--recent-posts a:hover { color: black; }
 /* line 27, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 .nav--recent-posts a:active { color: black; }
-/* line 7, ../scss/03_molecules/_nav-recent-posts.scss */
+/* line 8, ../scss/03_molecules/_nav-recent-posts.scss */
 .nav--recent-posts a:hover, .nav--recent-posts a.current { -webkit-box-shadow: -2px 0 3px rgba(0, 0, 0, 0.5) inset; -moz-box-shadow: -2px 0 3px rgba(0, 0, 0, 0.5) inset; box-shadow: -2px 0 3px rgba(0, 0, 0, 0.5) inset; background-color: #f0a541; }
-/* line 11, ../scss/03_molecules/_nav-recent-posts.scss */
+/* line 12, ../scss/03_molecules/_nav-recent-posts.scss */
 .nav--recent-posts a time { display: block; font-size: 12px; margin-top: 5px; }
-
-/* line 1, ../scss/03_molecules/_sidebar-primary.scss */
-.sidebar--primary { padding: 30px 0; }

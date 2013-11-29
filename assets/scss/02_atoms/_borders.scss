@@ -1,3 +1,7 @@
 %double-gray-border-top {
   border-top: 3px double $pale-gray;
 }
+
+%dotted-gray-border-bottom {
+  border-bottom: 1px dotted $pale-gray;
+}

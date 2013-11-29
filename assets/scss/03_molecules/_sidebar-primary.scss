@@ -1,4 +1,3 @@
 .sidebar--primary {
-  @extend %double-gray-border-top;
-  padding: (3 * $margin) 0;
+  @extend %column-sidebar;
 }

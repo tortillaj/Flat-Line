@@ -14,6 +14,9 @@
         margin: 0;
       }
     }
+    a {
+      border: none;
+    }
   }
 }
 
@@ -42,6 +45,23 @@
           list-style: lower-roman;
         }
       }
+    }
+  }
+}
+
+.list-view {
+  .post {
+    @extend %cf;
+    @extend %double-gray-border-top;
+    margin: (3 * $margin) 0;
+    padding-top: 3 * $margin;
+    &:first-of-type {
+      border: none;
+      margin-top: 0;
+      padding-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 }

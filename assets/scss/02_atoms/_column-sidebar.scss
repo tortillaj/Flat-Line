@@ -1,8 +1,8 @@
 %column-sidebar {
-  @include breakpoint($tree) {
-    @include grid-span(4, 13);
-  }
-  @include breakpoint($sequoia) {
-    @include grid-span(4, 14);
-  }
+  @extend %cf;
+  @extend %double-gray-border-top;
+  padding: (3 * $margin) 0;
+  float: left;
+  clear: left;
+  width: 100%;
 }

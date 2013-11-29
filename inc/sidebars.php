@@ -12,8 +12,8 @@ function dawn_register_sidebars()
                          'description'   => __( 'The first (primary) sidebar.', 'dawn' ),
                          'before_widget' => '<section class="widget %2$s">',
                          'after_widget'  => '</div></section>',
-                         'before_title'  => '<h4 class="widget-title">',
-                         'after_title'   => '</h4><div class="widget-inner">',
+                         'before_title'  => '<h5 class="widget-title">',
+                         'after_title'   => '</h5><div class="widget-inner">',
                     ) );
   register_sidebar( array(
                          'id'            => 'sidebar_footer',
@@ -21,8 +21,8 @@ function dawn_register_sidebars()
                          'description'   => __( 'The footer sidebar.', 'dawn' ),
                          'before_widget' => '<section class="widget %2$s">',
                          'after_widget'  => '</div></section>',
-                         'before_title'  => '<h4 class="widget-title">',
-                         'after_title'   => '</h4><div class="widget-inner">',
+                         'before_title'  => '<h5 class="widget-title">',
+                         'after_title'   => '</h5><div class="widget-inner">',
                     ) );
 }
 

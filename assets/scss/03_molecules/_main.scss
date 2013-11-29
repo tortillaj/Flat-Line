@@ -1,4 +1,8 @@
 .main {
   @extend %column-main;
-  margin-bottom: (10 * $margin);
+  padding: 0 2%;
+
+  @include breakpoint($sapling) {
+    padding: 0;
+  }
 }

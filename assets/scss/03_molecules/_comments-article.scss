@@ -1,0 +1,7 @@
+.comments--article {
+  @extend %major-section-margin;
+}
+
+.nocomments {
+  display: none;
+}

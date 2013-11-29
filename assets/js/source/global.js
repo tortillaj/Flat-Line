@@ -2,8 +2,11 @@
 
   $(document).ready(function() {
     var height = $(document).height();
+    var width = $(document).width();
 
-    $('.header--document').height(height);
+    if (width >= 768) {
+      $('.header--document').height(height);
+    }
   });
 
 })(jQuery);

@@ -1,0 +1,37 @@
+.widget {
+  @extend %minor-section-margin;
+
+  @include breakpoint($sprout) {
+    width: 47.5%;
+    margin-right: 5%;
+    float: left;
+    &:nth-child(even) {
+      margin-right: 0;
+    }
+    &:nth-child(odd) {
+      clear: left;
+    }
+  }
+
+  @include breakpoint($bush) {
+    width: 30%;
+    margin-right: 5%;
+    float: left;
+    &:nth-child(even) {
+      margin-right: 5%;
+    }
+    &:nth-child(odd) {
+      clear: none;
+    }
+    &:nth-child(3n + 3) {
+      margin-right: 0;
+    }
+    &:nth-child(3n + 1) {
+      clear: left;
+    }
+  }
+}
+
+.widget-title {
+  @extend %dotted-gray-border-bottom;
+}

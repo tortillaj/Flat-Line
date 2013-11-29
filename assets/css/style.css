@@ -58,7 +58,7 @@ blockquote { width: 96%; padding: 20px; margin: 40px auto; background: #eaeaea; 
 .footer--article { border-top: 1px solid #eaeaea; }
 
 /* line 9, ../scss/02_atoms/_borders.scss */
-a, .header--article { border-bottom: 1px dotted #eaeaea; }
+a, .widget-title, .header--article { border-bottom: 1px dotted #eaeaea; }
 
 /* line 1, ../scss/02_atoms/_column-main.scss */
 .main { width: 100%; float: right; margin-left: 0; margin-right: 0; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
@@ -205,10 +205,10 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active { c
 .list-view .post h2 { margin-bottom: 10px; }
 
 /* line 1, ../scss/02_atoms/_margins.scss */
-.footer--article { margin-bottom: 80px; }
+.comments--article, .footer--article { margin-bottom: 80px; }
 
 /* line 5, ../scss/02_atoms/_margins.scss */
-.content--article { margin-bottom: 40px; }
+.widget, .content--article { margin-bottom: 40px; }
 
 /* line 9, ../scss/02_atoms/_margins.scss */
 .header--article { margin-bottom: 20px; }
@@ -271,6 +271,26 @@ table thead tr th { font-size: 18.4px; font-weight: bold; vertical-align: bottom
 /* line 42, ../scss/02_atoms/_tables.scss */
 table tr:nth-of-type(even), table table tr.stripe, table table tr.striped { background-color: #eaeaea; }
 
+@media (min-width: 37.5em) { /* line 1, ../scss/02_atoms/_widgets.scss */
+  .widget { width: 47.5%; margin-right: 5%; float: left; }
+  /* line 8, ../scss/02_atoms/_widgets.scss */
+  .widget:nth-child(even) { margin-right: 0; }
+  /* line 11, ../scss/02_atoms/_widgets.scss */
+  .widget:nth-child(odd) { clear: left; } }
+@media (min-width: 67.5em) { /* line 1, ../scss/02_atoms/_widgets.scss */
+  .widget { width: 30%; margin-right: 5%; float: left; }
+  /* line 20, ../scss/02_atoms/_widgets.scss */
+  .widget:nth-child(even) { margin-right: 5%; }
+  /* line 23, ../scss/02_atoms/_widgets.scss */
+  .widget:nth-child(odd) { clear: none; }
+  /* line 26, ../scss/02_atoms/_widgets.scss */
+  .widget:nth-child(3n + 3) { margin-right: 0; }
+  /* line 29, ../scss/02_atoms/_widgets.scss */
+  .widget:nth-child(3n + 1) { clear: left; } }
+
+/* line 5, ../scss/03_molecules/_comments-article.scss */
+.nocomments { display: none; }
+
 /* line 5, ../scss/03_molecules/_content-article.scss */
 .content--article ul { padding-left: 10px; }
 /* line 7, ../scss/03_molecules/_content-article.scss */
@@ -328,7 +348,9 @@ table tr:nth-of-type(even), table table tr.stripe, table table tr.striped { back
   .header--document:after { clear: both; } }
 
 /* line 1, ../scss/03_molecules/_main.scss */
-.main { margin-bottom: 100px; }
+.main { padding: 0 2%; }
+@media (min-width: 48em) { /* line 1, ../scss/03_molecules/_main.scss */
+  .main { padding: 0; } }
 
 /* line 1, ../scss/03_molecules/_meta-authors-date.scss */
 .meta--author-date { font-family: "Vollkorn", "Georgia", Cambria, Times New Roman, Times, serif; }

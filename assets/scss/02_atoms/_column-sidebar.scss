@@ -1,0 +1,8 @@
+%column-sidebar {
+  @include breakpoint($tree) {
+    @include grid-span(4, 13);
+  }
+  @include breakpoint($sequoia) {
+    @include grid-span(4, 14);
+  }
+}

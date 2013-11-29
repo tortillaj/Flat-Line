@@ -1,5 +1,4 @@
 .footer--document {
-  @extend %column-main;
   @extend %double-gray-border-top;
-  padding: (3 * $margin) 0
+  padding: (3 * $margin) 0;
 }

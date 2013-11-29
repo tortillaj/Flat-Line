@@ -1,4 +1,4 @@
 .main {
   @extend %column-main;
-  margin: 0 0 (10 * $margin);
+  margin-bottom: (10 * $margin);
 }

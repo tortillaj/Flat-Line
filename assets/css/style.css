@@ -49,41 +49,41 @@ body { line-height: 24px; font-size: 16px; font-family: "Source Sans Pro", "Helv
 .container:after, .clearfix:after, dl:after { clear: both; }
 
 /* line 1, ../scss/02_atoms/_blockquote.scss */
-blockquote { width: 96%; padding: 20px; margin: 10px auto; background: #eaeaea; font-size: 18.4px; font-style: italic; line-height: 1.5; }
+blockquote { width: 96%; padding: 20px; margin: 40px auto; background: #eaeaea; font-size: 18.4px; font-style: italic; line-height: 1.5; }
 
 /* line 1, ../scss/02_atoms/_borders.scss */
 .footer--document, .sidebar--primary { border-top: 3px double #eaeaea; }
 
 /* line 1, ../scss/02_atoms/_column-main.scss */
-.footer--document, .main, .sidebar--primary { width: 100%; float: right; margin-left: 0; margin-right: 0; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
+.main { width: 100%; float: right; margin-left: 0; margin-right: 0; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
 /* line 48, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-.footer--document:before, .main:before, .sidebar--primary:before, .footer--document:after, .main:after, .sidebar--primary:after { content: "."; display: block; height: 0; overflow: hidden; }
+.main:before, .main:after { content: "."; display: block; height: 0; overflow: hidden; }
 /* line 55, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-.footer--document:after, .main:after, .sidebar--primary:after { clear: both; }
+.main:after { clear: both; }
 @media (min-width: 48em) { /* line 1, ../scss/02_atoms/_column-main.scss */
-  .footer--document, .main, .sidebar--primary { width: 66.03774%; float: right; margin-left: 0; margin-right: 0; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
+  .main { width: 66.03774%; float: right; margin-left: 0; margin-right: 0; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
   /* line 48, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-  .footer--document:before, .main:before, .sidebar--primary:before, .footer--document:after, .main:after, .sidebar--primary:after { content: "."; display: block; height: 0; overflow: hidden; }
+  .main:before, .main:after { content: "."; display: block; height: 0; overflow: hidden; }
   /* line 55, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-  .footer--document:after, .main:after, .sidebar--primary:after { clear: both; } }
+  .main:after { clear: both; } }
 @media (min-width: 67.5em) { /* line 1, ../scss/02_atoms/_column-main.scss */
-  .footer--document, .main, .sidebar--primary { width: 74.64789%; float: right; margin-left: 0; margin-right: 0; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
+  .main { width: 74.64789%; float: right; margin-left: 0; margin-right: 0; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
   /* line 48, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-  .footer--document:before, .main:before, .sidebar--primary:before, .footer--document:after, .main:after, .sidebar--primary:after { content: "."; display: block; height: 0; overflow: hidden; }
+  .main:before, .main:after { content: "."; display: block; height: 0; overflow: hidden; }
   /* line 55, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-  .footer--document:after, .main:after, .sidebar--primary:after { clear: both; } }
+  .main:after { clear: both; } }
 @media (min-width: 80em) { /* line 1, ../scss/02_atoms/_column-main.scss */
-  .footer--document, .main, .sidebar--primary { width: 59.55056%; float: left; margin-right: -100%; margin-left: 20.22472%; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
+  .main { width: 59.55056%; float: left; margin-right: -100%; margin-left: 20.22472%; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
   /* line 48, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-  .footer--document:before, .main:before, .sidebar--primary:before, .footer--document:after, .main:after, .sidebar--primary:after { content: "."; display: block; height: 0; overflow: hidden; }
+  .main:before, .main:after { content: "."; display: block; height: 0; overflow: hidden; }
   /* line 55, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-  .footer--document:after, .main:after, .sidebar--primary:after { clear: both; } }
+  .main:after { clear: both; } }
 @media (min-width: 93.75em) { /* line 1, ../scss/02_atoms/_column-main.scss */
-  .footer--document, .main, .sidebar--primary { width: 49.53271%; float: left; margin-right: -100%; margin-left: 11.21495%; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
+  .main { width: 49.53271%; float: left; margin-right: -100%; margin-left: 22.42991%; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
   /* line 48, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-  .footer--document:before, .main:before, .sidebar--primary:before, .footer--document:after, .main:after, .sidebar--primary:after { content: "."; display: block; height: 0; overflow: hidden; }
+  .main:before, .main:after { content: "."; display: block; height: 0; overflow: hidden; }
   /* line 55, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
-  .footer--document:after, .main:after, .sidebar--primary:after { clear: both; } }
+  .main:after { clear: both; } }
 
 /* line 1, ../scss/02_atoms/_definition-list.scss */
 dl { width: 100%; }
@@ -158,7 +158,7 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover { color: 
 h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active { color: black; }
 
 /* line 14, ../scss/02_atoms/_links.scss */
-.logo { color: #c4c4c4; display: block; width: 100%; border-bottom: 1px solid #c4c4c4; padding: 10px 0 2.5px; margin: 0 0 40px; }
+.logo { color: #c4c4c4; display: block; border-bottom: 1px solid #c4c4c4; padding: 10px 0 2.5px; margin-bottom: 40px; }
 /* line 18, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 .logo:visited { color: #c4c4c4; }
 /* line 21, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
@@ -283,14 +283,14 @@ table tr:nth-of-type(even), table table tr.stripe, table table tr.striped { back
   /* line 55, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
   .header--document:after { clear: both; } }
 @media (min-width: 93.75em) { /* line 1, ../scss/03_molecules/_header-document.scss */
-  .header--document { width: 10.28037%; float: left; margin-right: -100%; margin-left: 0%; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
+  .header--document { width: 21.49533%; float: left; margin-right: -100%; margin-left: 0%; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
   /* line 48, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
   .header--document:before, .header--document:after { content: "."; display: block; height: 0; overflow: hidden; }
   /* line 55, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
   .header--document:after { clear: both; } }
 
 /* line 1, ../scss/03_molecules/_main.scss */
-.main { margin: 0 0 100px; }
+.main { margin-bottom: 100px; }
 
 /* line 5, ../scss/03_molecules/_nav-footer.scss */
 .nav--footer ul li a { color: #aaaaaa; }

@@ -1,0 +1,8 @@
+%column-full {
+  @include breakpoint($tree) {
+    @include grid-span(12, 4);
+  }
+  @include breakpoint($sequoia) {
+    @include grid-span(13, 4);
+  }
+}

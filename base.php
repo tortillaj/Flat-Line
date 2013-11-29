@@ -14,7 +14,6 @@
 
   <?php get_template_part( 'templates/document', 'header' ); ?>
 
-
   <div class="main <?php echo dawn_main_class(); ?>" role="main">
 
     <a class="logo" href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo( 'name' ); ?></a>
@@ -35,13 +34,13 @@
       <?php get_template_part( 'templates/content/content', 'notfound' ); ?>
     <?php endif; ?>
 
+    <?php if ( dawn_display_sidebar() ): ?>
+      <?php include dawn_sidebar_path(); ?>
+    <?php endif; ?>
+
+    <?php get_template_part( 'templates/document', 'footer' ); ?>
+
   </div>
-
-  <?php if ( dawn_display_sidebar() ): ?>
-    <?php include dawn_sidebar_path(); ?>
-  <?php endif; ?>
-
-  <?php get_template_part( 'templates/document', 'footer' ); ?>
 
 </div>
 

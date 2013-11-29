@@ -21,3 +21,9 @@
     @include grid-span(4, 1);
   }
 }
+
+.mobile {
+  .header--document {
+    display: none;
+  }
+}

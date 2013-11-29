@@ -68,6 +68,7 @@
         global: {
           files: {
             'assets/js/build/global.min.js': [
+              'assets/js/source/jquery.debouncedresize.js',
               'assets/js/source/global.js'
             ]
           }

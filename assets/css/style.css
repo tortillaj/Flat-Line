@@ -347,6 +347,9 @@ table tr:nth-of-type(even), table table tr.stripe, table table tr.striped { back
   /* line 55, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
   .header--document:after { clear: both; } }
 
+/* line 26, ../scss/03_molecules/_header-document.scss */
+.mobile .header--document { display: none; }
+
 /* line 1, ../scss/03_molecules/_main.scss */
 .main { padding: 0 2%; }
 @media (min-width: 48em) { /* line 1, ../scss/03_molecules/_main.scss */

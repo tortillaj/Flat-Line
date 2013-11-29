@@ -1,0 +1,17 @@
+.meta--related {
+  h5, a {
+    @include inline-block;
+    font-size: $small;
+    line-height: 1;
+    margin: 0;
+  }
+  h5 {
+    text-transform: none;
+    font-weight: $weight-bold;
+    font-family: $sans;
+    &:after {
+      content: ":";
+      margin: 0 ($margin / 2) 0 0;
+    }
+  }
+}

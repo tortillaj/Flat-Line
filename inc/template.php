@@ -152,7 +152,7 @@ class Template
   {
     global $post;
     $current_post = $post;
-    $return = '';
+    $return       = '';
 
     $args = array( 'post_type'      => $types,
                    'orderby'        => 'date',
@@ -164,13 +164,54 @@ class Template
     if ( $posts->have_posts() ) {
       while ( $posts->have_posts() ) {
         $posts->the_post();
-        $id = get_the_ID();
-        $class = ($current_post->ID == $post->ID) ? 'current' : '';
+        $class = ( $current_post->ID == $post->ID ) ? 'current' : '';
         $return .= '<a class="' . $class . '" href="' . get_permalink() . '" rel="bookmark" title="' . the_title_attribute( 'echo=0' ) . '">' . get_the_title() . '<time>' . get_the_date( 'F j, Y' ) . '</time></a>';
       }
     }
 
     return $return;
+  }
+
+  /*
+   * List post / page categories, tags and terms
+   *
+   * @param $type string can be 'terms', 'tags', or 'categories'
+   */
+  public static function related( $type )
+  {
+    global $post;
+    $links = array();
+
+    switch ( $type ) {
+      case 'terms':
+        // collect the terms
+        $terms = wp_get_object_terms( $post->ID, array( 'language', 'framework' ) );
+        if ( !empty( $terms ) ) {
+          foreach ( $terms as $t ) {
+            $links[] = '<a class="term" href="' . get_term_link( $t ) . '">' . $t->name . '</a>';
+          }
+        }
+        break;
+      case 'tags':
+        // collect the tags
+        $tags = get_the_tags( $post->ID );
+        if ( !empty( $tags ) ) {
+          foreach ( $tags as $t ) {
+            $links[] = '<a class="tag" href="' . get_tag_link( $t->term_id ) . '">' . $t->name . '</a>';
+          }
+        }
+        break;
+      case 'categories':
+        $categories = get_the_category($post->ID);
+        if (!empty($categories)) {
+          foreach ($categories as $c) {
+            $links[] = '<a class="category" href="' . get_category_link($c->term_id) . '">' . $c->name . '</a>';
+          }
+        }
+        break;
+    }
+
+    return implode( $links, ", " );
   }
 
 }

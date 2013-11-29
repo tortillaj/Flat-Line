@@ -1,0 +1,10 @@
+.header--article {
+  @extend %miniscule-section-margin;
+  @extend %dotted-gray-border-bottom;
+  h1 {
+    margin-bottom: $margin;
+  }
+  a {
+    border: none;
+  }
+}

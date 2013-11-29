@@ -42,11 +42,11 @@ body { line-height: 24px; font-size: 16px; font-family: "Source Sans Pro", "Helv
   .container { width: 99%; margin: 0; } }
 
 /* line 1, ../scss/01_utilities/_clearfix.scss */
-.container, .clearfix, .footer--document, .sidebar--primary, dl, .list-view .post { *zoom: 1; }
+.container, .clearfix, .footer--document, .sidebar--primary, dl, .list-view .post, .content--article { *zoom: 1; }
 /* line 3, ../scss/01_utilities/_clearfix.scss */
-.container:before, .clearfix:before, .footer--document:before, .sidebar--primary:before, dl:before, .list-view .post:before, .container:after, .clearfix:after, .footer--document:after, .sidebar--primary:after, dl:after, .list-view .post:after { content: " "; display: table; }
+.container:before, .clearfix:before, .footer--document:before, .sidebar--primary:before, dl:before, .list-view .post:before, .content--article:before, .container:after, .clearfix:after, .footer--document:after, .sidebar--primary:after, dl:after, .list-view .post:after, .content--article:after { content: " "; display: table; }
 /* line 7, ../scss/01_utilities/_clearfix.scss */
-.container:after, .clearfix:after, .footer--document:after, .sidebar--primary:after, dl:after, .list-view .post:after { clear: both; }
+.container:after, .clearfix:after, .footer--document:after, .sidebar--primary:after, dl:after, .list-view .post:after, .content--article:after { clear: both; }
 
 /* line 1, ../scss/02_atoms/_blockquote.scss */
 blockquote { width: 96%; padding: 20px; margin: 40px auto; background: #eaeaea; font-size: 18.4px; font-style: italic; line-height: 1.5; }
@@ -55,7 +55,10 @@ blockquote { width: 96%; padding: 20px; margin: 40px auto; background: #eaeaea; 
 .footer--document, .sidebar--primary, .list-view .post { border-top: 3px double #eaeaea; }
 
 /* line 5, ../scss/02_atoms/_borders.scss */
-a { border-bottom: 1px dotted #eaeaea; }
+.footer--article { border-top: 1px solid #eaeaea; }
+
+/* line 9, ../scss/02_atoms/_borders.scss */
+a, .header--article { border-bottom: 1px dotted #eaeaea; }
 
 /* line 1, ../scss/02_atoms/_column-main.scss */
 .main { width: 100%; float: right; margin-left: 0; margin-right: 0; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
@@ -189,28 +192,26 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active { c
 .list-inline li a, .nav--footer li a { border: none; }
 
 /* line 24, ../scss/02_atoms/_lists.scss */
-.article-content ul { padding-left: 10px; }
-/* line 26, ../scss/02_atoms/_lists.scss */
-.article-content ul li { list-style: disc; margin-left: 10px; }
-/* line 29, ../scss/02_atoms/_lists.scss */
-.article-content ul li li { list-style: circle; }
-/* line 31, ../scss/02_atoms/_lists.scss */
-.article-content ul li li li { list-style: square; }
-/* line 37, ../scss/02_atoms/_lists.scss */
-.article-content ol { padding-left: 10px; }
-/* line 39, ../scss/02_atoms/_lists.scss */
-.article-content ol li { list-style: decimal; margin-left: 10px; }
-/* line 42, ../scss/02_atoms/_lists.scss */
-.article-content ol li li { list-style: upper-roman; }
-/* line 44, ../scss/02_atoms/_lists.scss */
-.article-content ol li li li { list-style: lower-roman; }
-
-/* line 53, ../scss/02_atoms/_lists.scss */
-.list-view .post { margin: 30px 0; padding-top: 30px; }
-/* line 58, ../scss/02_atoms/_lists.scss */
+.list-view .post { margin: 30px 0; margin: 30px 0; padding-top: 30px; }
+/* line 3, ../scss/01_utilities/_mixins.scss */
+.list-view .post:first-child { margin-top: 0; }
+/* line 6, ../scss/01_utilities/_mixins.scss */
+.list-view .post:last-child, .list-view .post:last-of-type { margin-bottom: 0; }
+/* line 30, ../scss/02_atoms/_lists.scss */
 .list-view .post:first-of-type { border: none; margin-top: 0; padding-top: 0; }
-/* line 63, ../scss/02_atoms/_lists.scss */
+/* line 35, ../scss/02_atoms/_lists.scss */
 .list-view .post:last-child { margin-bottom: 0; }
+/* line 38, ../scss/02_atoms/_lists.scss */
+.list-view .post h2 { margin-bottom: 10px; }
+
+/* line 1, ../scss/02_atoms/_margins.scss */
+.footer--article { margin-bottom: 80px; }
+
+/* line 5, ../scss/02_atoms/_margins.scss */
+.content--article { margin-bottom: 40px; }
+
+/* line 9, ../scss/02_atoms/_margins.scss */
+.header--article { margin-bottom: 20px; }
 
 /* line 1, ../scss/02_atoms/_paragraphs.scss */
 strong { font-weight: 600; }
@@ -252,6 +253,9 @@ p:last-child { margin-bottom: 0; }
 /* line 61, ../scss/02_atoms/_paragraphs.scss */
 .article-excerpt p { white-space: pre-wrap; }
 
+/* line 1, ../scss/02_atoms/_sections.scss */
+.meta { width: 100%; margin: 0 0 10px; }
+
 /* line 1, ../scss/02_atoms/_tables.scss */
 table { display: table; border-collapse: collapse; border-spacing: 0; margin-bottom: 20px; width: 100%; border: 1px solid #4d4d4d; }
 /* line 9, ../scss/02_atoms/_tables.scss */
@@ -267,14 +271,30 @@ table thead tr th { font-size: 18.4px; font-weight: bold; vertical-align: bottom
 /* line 42, ../scss/02_atoms/_tables.scss */
 table tr:nth-of-type(even), table table tr.stripe, table table tr.striped { background-color: #eaeaea; }
 
-/* line 2, ../scss/03_molecules/_excerpt.scss */
-.list-view article { margin: 30px 0; }
-/* line 3, ../scss/01_utilities/_mixins.scss */
-.list-view article:first-child { margin-top: 0; }
-/* line 6, ../scss/01_utilities/_mixins.scss */
-.list-view article:last-child, .list-view article:last-of-type { margin-bottom: 0; }
-/* line 4, ../scss/03_molecules/_excerpt.scss */
-.list-view article h2 { margin: 0; }
+/* line 5, ../scss/03_molecules/_content-article.scss */
+.content--article ul { padding-left: 10px; }
+/* line 7, ../scss/03_molecules/_content-article.scss */
+.content--article ul li { list-style: disc; margin-left: 10px; }
+/* line 10, ../scss/03_molecules/_content-article.scss */
+.content--article ul li li { list-style: circle; }
+/* line 12, ../scss/03_molecules/_content-article.scss */
+.content--article ul li li li { list-style: square; }
+/* line 18, ../scss/03_molecules/_content-article.scss */
+.content--article ol { padding-left: 10px; }
+/* line 20, ../scss/03_molecules/_content-article.scss */
+.content--article ol li { list-style: decimal; margin-left: 10px; }
+/* line 23, ../scss/03_molecules/_content-article.scss */
+.content--article ol li li { list-style: upper-roman; }
+/* line 25, ../scss/03_molecules/_content-article.scss */
+.content--article ol li li li { list-style: lower-roman; }
+
+/* line 1, ../scss/03_molecules/_footer-article.scss */
+.footer--article { padding-top: 10px; }
+
+/* line 4, ../scss/03_molecules/_header-article.scss */
+.header--article h1 { margin-bottom: 10px; }
+/* line 7, ../scss/03_molecules/_header-article.scss */
+.header--article a { border: none; }
 
 /* line 1, ../scss/03_molecules/_header-document.scss */
 .header--document { background-color: #f3b562; width: 100%; float: right; margin-left: 0; margin-right: 0; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
@@ -309,6 +329,16 @@ table tr:nth-of-type(even), table table tr.stripe, table table tr.striped { back
 
 /* line 1, ../scss/03_molecules/_main.scss */
 .main { margin-bottom: 100px; }
+
+/* line 1, ../scss/03_molecules/_meta-authors-date.scss */
+.meta--author-date { font-family: "Vollkorn", "Georgia", Cambria, Times New Roman, Times, serif; }
+
+/* line 2, ../scss/03_molecules/_meta-related.scss */
+.meta--related h5, .meta--related a { display: -moz-inline-stack; display: inline-block; vertical-align: middle; *vertical-align: auto; zoom: 1; *display: inline; font-size: 13.6px; line-height: 1; margin: 0; }
+/* line 8, ../scss/03_molecules/_meta-related.scss */
+.meta--related h5 { text-transform: none; font-weight: 600; font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+/* line 12, ../scss/03_molecules/_meta-related.scss */
+.meta--related h5:after { content: ":"; margin: 0 5px 0 0; }
 
 /* line 5, ../scss/03_molecules/_nav-footer.scss */
 .nav--footer ul li a { color: #aaaaaa; }

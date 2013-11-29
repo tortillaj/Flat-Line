@@ -19,6 +19,9 @@ function dawn_alter_post_class( $classes )
     if (false !== strpos($class, 'post') && strpos($class, 'post') === 0) {
       $post_classes[] = $class;
     }
+    if (false !== strpos($class, 'page') && strpos($class, 'page') === 0) {
+      $post_classes[] = $class;
+    }
   }
   return $post_classes;
 }

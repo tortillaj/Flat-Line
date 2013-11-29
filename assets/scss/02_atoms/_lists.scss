@@ -20,39 +20,11 @@
   }
 }
 
-.article-content {
-  ul {
-    padding-left: $margin;
-    li {
-      list-style: disc;
-      margin-left: $margin;
-      li {
-        list-style: circle;
-        li {
-          list-style: square;
-        }
-      }
-    }
-  }
-  ol {
-    padding-left: $margin;
-    li {
-      list-style: decimal;
-      margin-left: $margin;
-      li {
-        list-style: upper-roman;
-        li {
-          list-style: lower-roman;
-        }
-      }
-    }
-  }
-}
-
 .list-view {
   .post {
     @extend %cf;
     @extend %double-gray-border-top;
+    @include no-hangars(3 * $margin);
     margin: (3 * $margin) 0;
     padding-top: 3 * $margin;
     &:first-of-type {
@@ -62,6 +34,9 @@
     }
     &:last-child {
       margin-bottom: 0;
+    }
+    h2 {
+      margin-bottom: $margin;
     }
   }
 }

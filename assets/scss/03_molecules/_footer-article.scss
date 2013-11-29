@@ -1,0 +1,5 @@
+.footer--article {
+  @extend %single-gray-border-top;
+  @extend %major-section-margin;
+  padding-top: $margin;
+}

@@ -2,6 +2,10 @@
   border-top: 3px double $pale-gray;
 }
 
+%single-gray-border-top {
+  border-top: 1px solid $pale-gray;
+}
+
 %dotted-gray-border-bottom {
   border-bottom: 1px dotted $pale-gray;
 }

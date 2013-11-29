@@ -1,8 +1,0 @@
-.list-view {
-  article {
-    @include no-hangars(3 * $margin);
-    h2 {
-      margin: 0;
-    }
-  }
-}

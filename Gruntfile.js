@@ -83,14 +83,6 @@
               'assets/js/source/respond/dest/respond.src.js'
             ]
           }
-        },
-
-        selectivizr: {
-          files: {
-            'assets/js/build/selectivizr.min.js': [
-              'assets/js/source/selectivizr/selectivizr.js'
-            ]
-          }
         }
 
       },

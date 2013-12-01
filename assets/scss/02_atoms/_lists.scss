@@ -21,7 +21,7 @@
 }
 
 .list-view {
-  .post {
+  .post, .page {
     @extend %cf;
     @extend %double-gray-border-top;
     @include no-hangars(3 * $margin);

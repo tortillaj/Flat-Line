@@ -1,0 +1,14 @@
+.nav--pagination {
+  @extend %cf;
+  @extend %minor-section-margin;
+  a {
+    @extend %button-blue;
+    @include link-colors($black,$black,$black,$black,$black);
+    &:first-child {
+      float: left;
+    }
+    &:last-child {
+      float: right;
+    }
+  }
+}

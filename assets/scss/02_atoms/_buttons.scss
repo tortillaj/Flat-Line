@@ -1,1 +1,11 @@
-%
+%button {
+  @include inline-block;
+  padding: ($margin / 2) $margin;
+}
+
+%button-blue {
+  @extend %button;
+  border: 1px solid $dark-blue;
+  background-color: $light-blue;
+  color: $pale-gray;
+}

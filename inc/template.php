@@ -29,7 +29,7 @@ class Template
    *
    * @param $post object
    */
-  public static function page_title( $post = null )
+  public static function page_title( $pass_through = true, $post = null )
   {
     global $wp_query;
 
@@ -41,6 +41,9 @@ class Template
       $search_terms = get_search_query();
       $title        = 'Found ' . $wp_query->found_posts . ' matches <span class="sub-title">Search for "<em>' . $search_terms . '</em>"</span>';
     }
+    else if ( is_home() || is_front_page() ) {
+      $title = "";
+    }
     else if ( is_tax() ) {
       $term  = get_term_by( "slug", $wp_query->query_vars['term'], $wp_query->query_vars['taxonomy'] );
       $title = ( $term->description != "" ) ? $term->name . ' <span class="sub-title">' . $term->description . '</span>' : $term->name;
@@ -48,9 +51,9 @@ class Template
     else if ( is_tag() ) {
       $title = "Tagged: " . single_tag_title( '', false );
     }
-    else if (is_category()) {
+    else if ( is_category() ) {
       $categories = get_the_category();
-      $title = "Category: " . $categories[0]->name;
+      $title      = "Category: " . $categories[0]->name;
     }
     else if ( is_author() ) {
       $title = self::co_authors( false );
@@ -60,6 +63,14 @@ class Template
     }
     else {
       $title = $post->post_title;
+    }
+
+
+    if ( !$pass_through ) {
+      if (!is_home() && !is_front_page()) {
+        $title .= " | ";
+      }
+      $title .= "James Cole | Web Developer";
     }
 
     return $title;
@@ -206,7 +217,7 @@ class Template
     if ( $posts->have_posts() ) {
       while ( $posts->have_posts() ) {
         $posts->the_post();
-        $class = ( $current_post->ID == $post->ID ) ? 'current' : '';
+        $class = ( $current_post->ID == $post->ID && ( !is_archive() && !is_home() ) ) ? 'current' : '';
         $return .= '<a class="' . $class . '" href="' . get_permalink() . '" rel="bookmark" title="' . the_title_attribute( 'echo=0' ) . '">' . get_the_title() . '<time>' . get_the_date( 'F j, Y' ) . '</time></a>';
       }
     }

@@ -1,7 +1,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 
-  <title><?php wp_title(); ?></title>
+  <title><?php echo Template::page_title(false); ?></title>
 
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">

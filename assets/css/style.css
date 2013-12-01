@@ -42,17 +42,17 @@ body { line-height: 24px; font-size: 16px; font-family: "Source Sans Pro", "Helv
   .container { width: 99%; margin: 0; } }
 
 /* line 1, ../scss/01_utilities/_clearfix.scss */
-.container, .clearfix, .footer--document, .sidebar--primary, dl, .list-view .post, .list-view .page, .content--article, .nav--pagination { *zoom: 1; }
+.container, .clearfix, .footer--document, .sidebar--primary, dl, .list-view article:not(.sidebar), .blog .main article:not(.sidebar), p, .content--article, .nav--pagination, .nav--grid-links { *zoom: 1; }
 /* line 3, ../scss/01_utilities/_clearfix.scss */
-.container:before, .clearfix:before, .footer--document:before, .sidebar--primary:before, dl:before, .list-view .post:before, .list-view .page:before, .content--article:before, .nav--pagination:before, .container:after, .clearfix:after, .footer--document:after, .sidebar--primary:after, dl:after, .list-view .post:after, .list-view .page:after, .content--article:after, .nav--pagination:after { content: " "; display: table; }
+.container:before, .clearfix:before, .footer--document:before, .sidebar--primary:before, dl:before, .list-view article:not(.sidebar):before, .blog .main article:not(.sidebar):before, p:before, .content--article:before, .nav--pagination:before, .nav--grid-links:before, .container:after, .clearfix:after, .footer--document:after, .sidebar--primary:after, dl:after, .list-view article:not(.sidebar):after, .blog .main article:not(.sidebar):after, p:after, .content--article:after, .nav--pagination:after, .nav--grid-links:after { content: " "; display: table; }
 /* line 7, ../scss/01_utilities/_clearfix.scss */
-.container:after, .clearfix:after, .footer--document:after, .sidebar--primary:after, dl:after, .list-view .post:after, .list-view .page:after, .content--article:after, .nav--pagination:after { clear: both; }
+.container:after, .clearfix:after, .footer--document:after, .sidebar--primary:after, dl:after, .list-view article:not(.sidebar):after, .blog .main article:not(.sidebar):after, p:after, .content--article:after, .nav--pagination:after, .nav--grid-links:after { clear: both; }
 
 /* line 1, ../scss/02_atoms/_blockquote.scss */
 blockquote { width: 96%; padding: 20px; margin: 40px auto; background: #eaeaea; font-size: 18.4px; font-style: italic; line-height: 1.5; }
 
 /* line 1, ../scss/02_atoms/_borders.scss */
-.footer--document, .sidebar--primary, .list-view .post, .list-view .page { border-top: 3px double #eaeaea; }
+.footer--document, .sidebar--primary, .list-view article:not(.sidebar), .blog .main article:not(.sidebar) { border-top: 3px double #eaeaea; }
 
 /* line 5, ../scss/02_atoms/_borders.scss */
 .footer--article { border-top: 1px solid #eaeaea; }
@@ -147,11 +147,15 @@ img.alignright, figure.alignright { float: right; margin: 0 0 0 10px; }
 img.alignnone, figure.alignnone { max-width: 100%; height: auto; }
 
 /* line 21, ../scss/02_atoms/_images-figures.scss */
-figure.thumbnail { border: 1px solid #cccccc; background: #eaeaea; padding: 2.5px; }
-/* line 26, ../scss/02_atoms/_images-figures.scss */
 figure img { max-width: 100%; height: auto; }
-/* line 30, ../scss/02_atoms/_images-figures.scss */
+/* line 25, ../scss/02_atoms/_images-figures.scss */
 figure figcaption { font-style: italic; text-align: center; font-size: 13.6px; }
+
+/* line 32, ../scss/02_atoms/_images-figures.scss */
+.thumbnail { border: 1px solid #cccccc; background: #eaeaea; padding: 2.5px; }
+
+/* line 38, ../scss/02_atoms/_images-figures.scss */
+.thumbnail--excerpt { width: 75px; height: 75px; float: left; margin: 0 20px 0 0; }
 
 /* line 1, ../scss/02_atoms/_form-elements.scss */
 .select-box { display: -moz-inline-stack; display: inline-block; vertical-align: middle; *vertical-align: auto; zoom: 1; *display: inline; position: relative; padding: 1px 0; border: 1px solid #aaaaaa; background-color: #eaeaea; }
@@ -212,23 +216,21 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active { c
 .list-inline li a, .nav--footer li a { border: none; }
 
 /* line 24, ../scss/02_atoms/_lists.scss */
-.list-view .post, .list-view .page { margin: 30px 0; margin: 30px 0; padding-top: 30px; }
+.list-view article:not(.sidebar), .blog .main article:not(.sidebar) { margin: 30px 0; margin: 30px 0; padding-top: 30px; }
 /* line 3, ../scss/01_utilities/_mixins.scss */
-.list-view .post:first-child, .list-view .page:first-child { margin-top: 0; }
+.list-view article:not(.sidebar):first-child, .blog .main article:not(.sidebar):first-child { margin-top: 0; }
 /* line 6, ../scss/01_utilities/_mixins.scss */
-.list-view .post:last-child, .list-view .post:last-of-type, .list-view .page:last-child, .list-view .page:last-of-type { margin-bottom: 0; }
+.list-view article:not(.sidebar):last-child, .blog .main article:not(.sidebar):last-child, .list-view article:not(.sidebar):last-of-type, .blog .main article:not(.sidebar):last-of-type { margin-bottom: 0; }
 /* line 30, ../scss/02_atoms/_lists.scss */
-.list-view .post:first-of-type, .list-view .page:first-of-type { border: none; margin-top: 0; padding-top: 0; }
-/* line 35, ../scss/02_atoms/_lists.scss */
-.list-view .post:last-child, .list-view .page:last-child { margin-bottom: 0; }
+.list-view article:not(.sidebar):first-of-type, .blog .main article:not(.sidebar):first-of-type { border: none; margin-top: 0; padding-top: 0; }
 /* line 38, ../scss/02_atoms/_lists.scss */
-.list-view .post h2, .list-view .page h2 { margin-bottom: 10px; }
+.list-view article:not(.sidebar) h2, .blog .main article:not(.sidebar) h2 { margin-bottom: 10px; }
 
 /* line 1, ../scss/02_atoms/_margins.scss */
 .comments--article, .footer--article { margin-bottom: 80px; }
 
 /* line 5, ../scss/02_atoms/_margins.scss */
-.widget, .content--article, .header--archive, .nav--pagination { margin-bottom: 40px; }
+.list-view article:not(.sidebar):last-of-type, .blog .main article:not(.sidebar):last-of-type, .widget, .content--article, .header--archive, .header--document nav, .nav--pagination { margin-bottom: 40px; }
 
 /* line 9, ../scss/02_atoms/_margins.scss */
 .header--article { margin-bottom: 20px; }
@@ -265,15 +267,15 @@ ins { background: yellow; font-size: 13.6px; padding: 1px 3px; text-decoration: 
 
 /* line 50, ../scss/02_atoms/_paragraphs.scss */
 p { margin: 10px 0; }
-/* line 52, ../scss/02_atoms/_paragraphs.scss */
+/* line 53, ../scss/02_atoms/_paragraphs.scss */
 p:first-child { margin-top: 0; }
-/* line 55, ../scss/02_atoms/_paragraphs.scss */
+/* line 56, ../scss/02_atoms/_paragraphs.scss */
 p:last-child { margin-bottom: 0; }
 
-/* line 61, ../scss/02_atoms/_paragraphs.scss */
+/* line 62, ../scss/02_atoms/_paragraphs.scss */
 .article-excerpt p { white-space: pre-wrap; }
 
-/* line 66, ../scss/02_atoms/_paragraphs.scss */
+/* line 67, ../scss/02_atoms/_paragraphs.scss */
 .search-result { background-color: #f27777; padding: 1px 4px; }
 
 /* line 1, ../scss/02_atoms/_sections.scss */
@@ -372,8 +374,10 @@ table tr:nth-of-type(even), table table tr.stripe, table table tr.striped { back
   .header--document:before, .header--document:after { content: "."; display: block; height: 0; overflow: hidden; }
   /* line 55, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/singularitygs-1.1.2/stylesheets/singularitygs/helpers/_clearfix.scss */
   .header--document:after { clear: both; } }
-
 /* line 26, ../scss/03_molecules/_header-document.scss */
+.header--document nav h3 { padding: 10px; }
+
+/* line 36, ../scss/03_molecules/_header-document.scss */
 .mobile .header--document { display: none; }
 
 /* line 1, ../scss/03_molecules/_main.scss */
@@ -417,9 +421,9 @@ table tr:nth-of-type(even), table table tr.stripe, table table tr.striped { back
 /* line 27, ../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/typography/links/_link-colors.scss */
 .nav--pagination a:active { color: black; }
 /* line 7, ../scss/03_molecules/_nav-pagination.scss */
-.nav--pagination a:first-child, .nav--pagination a:only-of-type { float: left; }
-/* line 10, ../scss/03_molecules/_nav-pagination.scss */
 .nav--pagination a:last-child { float: right; }
+/* line 10, ../scss/03_molecules/_nav-pagination.scss */
+.nav--pagination a:first-child, .nav--pagination a:only-of-type { float: left; }
 
 /* line 2, ../scss/03_molecules/_nav-recent-posts.scss */
 .nav--recent-posts a { color: black; display: block; padding: 10px; border-top: 1px solid #4d4d4d; border-bottom: none; }
@@ -435,3 +439,18 @@ table tr:nth-of-type(even), table table tr.stripe, table table tr.striped { back
 .nav--recent-posts a:hover, .nav--recent-posts a.current { -webkit-box-shadow: -2px 0 3px rgba(0, 0, 0, 0.5) inset; -moz-box-shadow: -2px 0 3px rgba(0, 0, 0, 0.5) inset; box-shadow: -2px 0 3px rgba(0, 0, 0, 0.5) inset; background-color: #f0a541; }
 /* line 12, ../scss/03_molecules/_nav-recent-posts.scss */
 .nav--recent-posts a time { display: block; font-size: 12px; margin-top: 5px; }
+
+/* line 3, ../scss/03_molecules/_nav-grid-links.scss */
+.nav--grid-links li { display: -moz-inline-stack; display: inline-block; vertical-align: middle; *vertical-align: auto; zoom: 1; *display: inline; width: 32%; display: block; padding: 20px 0; float: left; text-align: center; margin-bottom: 10px; }
+/* line 13, ../scss/03_molecules/_nav-grid-links.scss */
+.nav--grid-links li:nth-child(3n + 1) { margin-right: 1%; }
+/* line 16, ../scss/03_molecules/_nav-grid-links.scss */
+.nav--grid-links li:nth-child(3n + 2) { margin-right: 1%; margin-left: 1%; border-right: 1px solid #f0a541; border-left: 1px solid #f0a541; }
+/* line 22, ../scss/03_molecules/_nav-grid-links.scss */
+.nav--grid-links li:nth-child(3n + 3) { margin-left: 1%; }
+/* line 25, ../scss/03_molecules/_nav-grid-links.scss */
+.nav--grid-links li:nth-child(3n + 4) { clear: left; }
+/* line 28, ../scss/03_molecules/_nav-grid-links.scss */
+.nav--grid-links li:nth-child(n + 4) { margin-top: 10px; border-top: 1px solid #f0a541; }
+/* line 32, ../scss/03_molecules/_nav-grid-links.scss */
+.nav--grid-links li a { border: none; }

@@ -21,7 +21,7 @@
 }
 
 .list-view {
-  .post, .page {
+  article:not(.sidebar) {
     @extend %cf;
     @extend %double-gray-border-top;
     @include no-hangars(3 * $margin);
@@ -32,11 +32,15 @@
       margin-top: 0;
       padding-top: 0;
     }
-    &:last-child {
-      margin-bottom: 0;
+    &:last-of-type {
+      @extend %minor-section-margin;
     }
     h2 {
       margin-bottom: $margin;
     }
   }
+}
+
+.blog .main {
+  @extend .list-view;
 }

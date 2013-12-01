@@ -7,7 +7,7 @@
     border-bottom: none;
     &:hover, &.current {
       @include box-shadow(-2px 0 3px rgba(0,0,0,0.5) inset);
-      background-color: $dark-orange;
+      background-color: $sidebar-dark-color;
     }
     time {
       display: block;

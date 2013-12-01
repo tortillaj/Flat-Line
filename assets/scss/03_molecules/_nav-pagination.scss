@@ -4,11 +4,11 @@
   a {
     @extend %button-blue;
     @include link-colors($black,$black,$black,$black,$black);
-    &:first-child, &:only-of-type {
-      float: left;
-    }
     &:last-child {
       float: right;
+    }
+    &:first-child, &:only-of-type {
+      float: left;
     }
   }
 }

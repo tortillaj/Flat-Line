@@ -20,6 +20,16 @@
   @include breakpoint($sequoia) {
     @include grid-span(4, 1);
   }
+
+  nav {
+    @extend %minor-section-margin;
+    h3 {
+      //border-top: 3px double $sidebar-dark-color;
+      //margin: 0 $margin 0 0;
+      padding: $margin;
+    }
+  }
+
 }
 
 .mobile {

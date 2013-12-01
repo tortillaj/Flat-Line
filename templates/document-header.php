@@ -7,7 +7,7 @@
   -->
   <nav role="navigation" id="recentPostsNavigationContainer" class="nav nav--recent-posts">
     <h3>Recent</h3>
-    <?php echo Template::recent_posts(); ?>
+    <?php echo Template::recent_posts(array('notes', 'experiments')); ?>
   </nav>
 
 </header>

@@ -115,10 +115,10 @@ dl dd { width: 68%; }
 h1 { font-size: 61px; line-height: 64.05px; margin: 38px 0; }
 
 /* line 7, ../scss/02_atoms/_headings.scss */
-h2 { font-size: 39px; line-height: 54.6px; margin: 25px 0; }
+h2 { font-size: 39px; line-height: 54.6px; margin: 40px 0 20px; }
 
 /* line 13, ../scss/02_atoms/_headings.scss */
-h3 { font-size: 25px; line-height: 37.5px; margin: 15px 0; }
+h3 { font-size: 25px; line-height: 37.5px; margin: 30px 0 15px; }
 
 /* line 19, ../scss/02_atoms/_headings.scss */
 h4 { font-size: 20px; line-height: 32px; margin: 10px 0; }
@@ -247,35 +247,34 @@ abbr { border-bottom: 1px dotted #eaeaea; }
 /* line 13, ../scss/02_atoms/_paragraphs.scss */
 cite, q { font-style: italic; }
 
-/* line 17, ../scss/02_atoms/_paragraphs.scss */
-code, kbd, pre, var { font-family: Monaco, "Andale Mono", "Courier New", monospace; background-color: #eaeaea; font-size: 13.6px; padding: 1px 3px; }
+/* line 18, ../scss/02_atoms/_paragraphs.scss */
+P code, P kbd, P pre, P var { font-family: Monaco, "Andale Mono", "Courier New", monospace; background-color: #eaeaea; font-size: 13.6px; padding: 1px 3px; }
+/* line 25, ../scss/02_atoms/_paragraphs.scss */
+P pre { width: 100%; overflow-x: scroll; }
 
-/* line 24, ../scss/02_atoms/_paragraphs.scss */
-pre { width: 100%; overflow-x: scroll; }
-
-/* line 29, ../scss/02_atoms/_paragraphs.scss */
+/* line 31, ../scss/02_atoms/_paragraphs.scss */
 strike { text-decoration: line-through; }
 
-/* line 33, ../scss/02_atoms/_paragraphs.scss */
+/* line 35, ../scss/02_atoms/_paragraphs.scss */
 sub { vertical-align: sub; font-size: 12px; }
 
-/* line 38, ../scss/02_atoms/_paragraphs.scss */
+/* line 40, ../scss/02_atoms/_paragraphs.scss */
 sup { vertical-align: super; font-size: 12px; }
 
-/* line 43, ../scss/02_atoms/_paragraphs.scss */
+/* line 45, ../scss/02_atoms/_paragraphs.scss */
 ins { background: yellow; font-size: 13.6px; padding: 1px 3px; text-decoration: none; }
 
-/* line 50, ../scss/02_atoms/_paragraphs.scss */
+/* line 52, ../scss/02_atoms/_paragraphs.scss */
 p { margin: 10px 0; }
-/* line 53, ../scss/02_atoms/_paragraphs.scss */
+/* line 55, ../scss/02_atoms/_paragraphs.scss */
 p:first-child { margin-top: 0; }
-/* line 56, ../scss/02_atoms/_paragraphs.scss */
+/* line 58, ../scss/02_atoms/_paragraphs.scss */
 p:last-child { margin-bottom: 0; }
 
-/* line 62, ../scss/02_atoms/_paragraphs.scss */
+/* line 64, ../scss/02_atoms/_paragraphs.scss */
 .article-excerpt p { white-space: pre-wrap; }
 
-/* line 67, ../scss/02_atoms/_paragraphs.scss */
+/* line 69, ../scss/02_atoms/_paragraphs.scss */
 .search-result { background-color: #f27777; padding: 1px 4px; }
 
 /* line 1, ../scss/02_atoms/_sections.scss */

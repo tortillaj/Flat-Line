@@ -14,16 +14,18 @@ cite, q {
   font-style: italic;
 }
 
-code, kbd, pre, var {
-  font-family: Monaco, "Andale Mono", "Courier New", monospace;
-  background-color: $pale-gray;
-  font-size: $small;
-  padding: 1px 3px;
-}
+P {
+  code, kbd, pre, var {
+    font-family: Monaco, "Andale Mono", "Courier New", monospace;
+    background-color: $pale-gray;
+    font-size: $small;
+    padding: 1px 3px;
+  }
 
-pre {
-  width: 100%;
-  overflow-x: scroll;
+  pre {
+    width: 100%;
+    overflow-x: scroll;
+  }
 }
 
 strike {

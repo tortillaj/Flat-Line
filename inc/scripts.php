@@ -5,6 +5,8 @@ function dawn_scripts()
 
   if ( !is_admin() ) {
 
+    wp_enqueue_script( 'modernizr', get_stylesheet_directory_uri() . '/assets/js/build/modernizr.custom.min.js', array(), ASSETS_VERSION, false );
+
     if ( current_theme_supports( 'jquery-cdn' ) ) {
       wp_deregister_script( 'jquery' );
       wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js', array(), '2.0.3', true );

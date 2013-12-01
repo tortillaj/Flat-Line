@@ -1,27 +1,13 @@
-(function($) {
+var JC = JC || {};
 
-  $(document).ready(function() {
-    var height = $(document).height();
-    var width = $(document).width();
-
-    resizeSite(width, height);
-
-    $(window).on('debouncedresize', function(e) {
-      var height = $(document).height();
-      var width = $(document).width();
-
-      resizeSite(width, height);
-    });
-
-  });
-
-  function resizeSite(width, height) {
-    if (width >= 768) {
-      $('.header--document').height(height);
-      $('body').removeClass('mobile');
-    } else {
-      $('body').addClass('mobile');
-    }
+// Load polyfills where needed
+Modernizr.load([
+  {
+    test: Modernizr.mq('only all'),
+    nope: 'assets/js/build/respond.min.js'
+  },
+  {
+    test: supportsSelector(':before') && supportsSelector(':after') && supportsSelector(':nth-child(even)') && supportsSelector(':nth-child(odd)'),
+    nope: 'assets/js/build/selectivizr-min.js'
   }
-
-})(jQuery);
+]);

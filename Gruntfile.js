@@ -69,11 +69,63 @@
           files: {
             'assets/js/build/global.min.js': [
               'assets/js/source/jquery.debouncedresize.js',
-              'assets/js/source/global.js'
+              'assets/js/source/supportsSelector.js',
+              'assets/js/source/global.js',
+              'assets/js/source/resizeSite.js'
+            ]
+          }
+        },
+
+        respond: {
+          files: {
+            'assets/js/build/respond.min.js': [
+              'assets/js/source/respond/dest/respond.matchmedia.addListener.src.js',
+              'assets/js/source/respond/dest/respond.src.js'
+            ]
+          }
+        },
+
+        selectivizr: {
+          files: {
+            'assets/js/build/selectivizr.min.js': [
+              'assets/js/source/selectivizr/selectivizr.js'
             ]
           }
         }
 
+      },
+
+      modernizr: {
+
+        // [REQUIRED] Path to the build you're using for development.
+        "devFile" : "remote",
+
+        // [REQUIRED] Path to save out the built file.
+        "outputFile" : "assets/js/build/modernizr.custom.min.js",
+
+        // Based on default settings on http://modernizr.com/download/
+        "extra" : {
+          "shiv" : true,
+          "printshiv" : false,
+          "load" : true,
+          "mq" : true,
+          "cssclasses" : true
+        },
+
+        // Based on default settings on http://modernizr.com/download/
+        "extensibility" : {
+          "addtest" : false,
+          "prefixed" : false,
+          "teststyles" : false,
+          "testprops" : false,
+          "testallprops" : false,
+          "hasevents" : false,
+          "prefixes" : false,
+          "domprefixes" : false
+        },
+        "uglify" : true,
+        "parseFiles" : false,
+        "matchCommunityTests" : false
       },
 
       // image optimization
@@ -92,7 +144,7 @@
             }
           ]
         }
-      },
+      }
 
     });
 

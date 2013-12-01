@@ -29,7 +29,7 @@ function dawn_main_class()
     $class = '';
   }
 
-  if ( is_search() || is_archive() || is_archive() ) {
+  if ( is_search() || is_archive() || is_paged() ) {
     $class .= ' list-view';
   }
 

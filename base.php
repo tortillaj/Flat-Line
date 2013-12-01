@@ -24,6 +24,12 @@
 
     <?php if ( have_posts() ) : ?>
 
+      <?php if ( is_search() || is_archive() ): ?>
+        <header class="header--archive">
+          <h1><?php echo Template::page_title(); ?></h1>
+        </header>
+      <?php endif; ?>
+
       <?php while ( have_posts() ) : the_post(); ?>
         <?php include dawn_template_path(); ?>
       <?php endwhile; ?>

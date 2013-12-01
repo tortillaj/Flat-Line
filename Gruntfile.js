@@ -48,7 +48,8 @@
         },
         all: [
           'Gruntfile.js',
-          'assets/js/source/global.js'
+          'assets/js/source/global.js',
+          'assets/js/source/selectMenus.js'
         ]
       },
 
@@ -71,7 +72,8 @@
               'assets/js/source/jquery.debouncedresize.js',
               'assets/js/source/supportsSelector.js',
               'assets/js/source/global.js',
-              'assets/js/source/resizeSite.js'
+              'assets/js/source/resizeSite.js',
+              'assets/js/source/selectMenus.js'
             ]
           }
         },

@@ -58,7 +58,7 @@ blockquote { width: 96%; padding: 20px; margin: 40px auto; background: #eaeaea; 
 .footer--article { border-top: 1px solid #eaeaea; }
 
 /* line 9, ../scss/02_atoms/_borders.scss */
-a, .widget-title, .header--article { border-bottom: 1px dotted #eaeaea; }
+a, .widget-title, .header--archive, .header--article { border-bottom: 1px dotted #eaeaea; }
 
 /* line 1, ../scss/02_atoms/_column-main.scss */
 .main { width: 100%; float: right; margin-left: 0; margin-right: 0; clear: none; /* for IE 6/7 */ *zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).style.cssText="clear:both;font:0/0 serif"); /* non-JS fallback */ *zoom: 1; }
@@ -127,6 +127,9 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { text-decoration: none; }
 
 /* line 47, ../scss/02_atoms/_headings.scss */
 h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child { margin-top: 0; }
+
+/* line 51, ../scss/02_atoms/_headings.scss */
+.sub-title { display: block; font-size: 50%; }
 
 /* line 2, ../scss/02_atoms/_images-figures.scss */
 img.aligncenter, figure.aligncenter { display: block; margin: 0 auto; }
@@ -208,7 +211,7 @@ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active { c
 .comments--article, .footer--article { margin-bottom: 80px; }
 
 /* line 5, ../scss/02_atoms/_margins.scss */
-.widget, .content--article { margin-bottom: 40px; }
+.widget, .content--article, .header--archive { margin-bottom: 40px; }
 
 /* line 9, ../scss/02_atoms/_margins.scss */
 .header--article { margin-bottom: 20px; }
@@ -252,6 +255,9 @@ p:last-child { margin-bottom: 0; }
 
 /* line 61, ../scss/02_atoms/_paragraphs.scss */
 .article-excerpt p { white-space: pre-wrap; }
+
+/* line 66, ../scss/02_atoms/_paragraphs.scss */
+.search-result { background-color: #f27777; padding: 1px 4px; }
 
 /* line 1, ../scss/02_atoms/_sections.scss */
 .meta { width: 100%; margin: 0 0 10px; }
@@ -310,6 +316,9 @@ table tr:nth-of-type(even), table table tr.stripe, table table tr.striped { back
 
 /* line 1, ../scss/03_molecules/_footer-article.scss */
 .footer--article { padding-top: 10px; }
+
+/* line 4, ../scss/03_molecules/_header-archive.scss */
+.header--archive h1 { margin-bottom: 10px; }
 
 /* line 4, ../scss/03_molecules/_header-article.scss */
 .header--article h1 { margin-bottom: 10px; }

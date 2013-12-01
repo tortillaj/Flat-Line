@@ -4,7 +4,7 @@ class Template
 {
 
   /*
-   * Get the title
+   * Get the post / page title
    *
    * @param $post object
    */
@@ -18,6 +18,48 @@ class Template
 
     if ( is_search() ) {
       $title = self::embolden_replace( $title );
+    }
+
+    return $title;
+
+  }
+
+  /*
+   * Get the post / page title
+   *
+   * @param $post object
+   */
+  public static function page_title( $post = null )
+  {
+    global $wp_query;
+
+    if ( $post === null ) {
+      global $post;
+    }
+
+    if ( is_search() ) {
+      $search_terms = get_search_query();
+      $title        = 'Found ' . $wp_query->found_posts . ' matches <span class="sub-title">Search for "<em>' . $search_terms . '</em>"</span>';
+    }
+    else if ( is_tax() ) {
+      $term  = get_term_by( "slug", $wp_query->query_vars['term'], $wp_query->query_vars['taxonomy'] );
+      $title = ( $term->description != "" ) ? $term->name . ' <span class="sub-title">' . $term->description . '</span>' : $term->name;
+    }
+    else if ( is_tag() ) {
+      $title = "Tagged: " . single_tag_title( '', false );
+    }
+    else if (is_category()) {
+      $categories = get_the_category();
+      $title = "Category: " . $categories[0]->name;
+    }
+    else if ( is_author() ) {
+      $title = self::co_authors( false );
+    }
+    else if ( is_archive() ) {
+      $title = "Archives";
+    }
+    else {
+      $title = $post->post_title;
     }
 
     return $title;
@@ -111,7 +153,7 @@ class Template
     global $wp_query;
 
     if ( $wp_query->max_num_pages > 1 ): ?>
-      <nav role="navigation">
+      <nav role="navigation" class="nav--pagination">
         <?php next_posts_link( '<span class="meta-nav">&larr;</span> Older posts' ); ?>
         <?php previous_posts_link( 'Newer posts <span class="meta-nav">&rarr;</span>' ); ?>
       </nav>
@@ -202,10 +244,10 @@ class Template
         }
         break;
       case 'categories':
-        $categories = get_the_category($post->ID);
-        if (!empty($categories)) {
-          foreach ($categories as $c) {
-            $links[] = '<a class="category" href="' . get_category_link($c->term_id) . '">' . $c->name . '</a>';
+        $categories = get_the_category( $post->ID );
+        if ( !empty( $categories ) ) {
+          foreach ( $categories as $c ) {
+            $links[] = '<a class="category" href="' . get_category_link( $c->term_id ) . '">' . $c->name . '</a>';
           }
         }
         break;

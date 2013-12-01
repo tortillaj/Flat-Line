@@ -1,0 +1,7 @@
+.header--archive {
+  @extend %minor-section-margin;
+  @extend %dotted-gray-border-bottom;
+  h1 {
+    margin-bottom: $margin;
+  }
+}

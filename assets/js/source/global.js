@@ -7,7 +7,7 @@ Modernizr.load([
     nope: 'assets/js/build/respond.min.js'
   },
   {
-    test: supportsSelector(':before') && supportsSelector(':after') && supportsSelector(':nth-child(even)') && supportsSelector(':nth-child(odd)'),
-    nope: 'assets/js/build/selectivizr-min.js'
+    test: supportsSelector(':before') && supportsSelector(':nth-child(n + 1)') && supportsSelector(':last-of-type'),
+    nope: 'assets/js/build/selectivizr.min.js'
   }
 ]);

@@ -41,9 +41,9 @@ class Template
       $search_terms = get_search_query();
       $title        = 'Found ' . $wp_query->found_posts . ' matches <span class="sub-title">Search for "<em>' . $search_terms . '</em>"</span>';
     }
-    else if ( is_home() || is_front_page() ) {
-      $title = "";
-    }
+    //else if ( is_home() || is_front_page() ) {
+      //$title = "";
+    //}
     else if ( is_tax() ) {
       $term  = get_term_by( "slug", $wp_query->query_vars['term'], $wp_query->query_vars['taxonomy'] );
       $title = ( $term->description != "" ) ? $term->name . ' <span class="sub-title">' . $term->description . '</span>' : $term->name;
@@ -223,6 +223,23 @@ class Template
     }
 
     return $return;
+  }
+
+  /*
+   * Return most recent post
+   *
+   * @param $types array of post types
+   */
+  public static function latest_post( $types = array( 'post' ) )
+  {
+    $args = array( 'post_type'      => $types,
+                   'orderby'        => 'date',
+                   'post_status'    => 'publish',
+                   'posts_per_page' => 1 );
+
+    $post = new WP_Query( $args );
+
+    return $post;
   }
 
   /*
